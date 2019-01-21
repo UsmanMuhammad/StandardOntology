@@ -11545,6 +11545,12 @@ sto:ModelingPractice rdf:type owl:NamedIndividual ,
                      rdfs:label "Modeling Practice"@en .
 
 
+###  https://w3id.org/i40/sto#MuhammadUsman
+sto:MuhammadUsman rdf:type owl:NamedIndividual ,
+                           foaf:Person ;
+                  rdfs:label "Muhammad Usman"@en .
+
+
 ###  https://w3id.org/i40/sto#Multilaterism
 sto:Multilaterism rdf:type owl:NamedIndividual ,
                            sto:Concern ;
@@ -12311,6 +12317,14 @@ sto:ProductionSystemModelData rdf:type owl:NamedIndividual ,
                               rdfs:label "Production System Model Data"@en .
 
 
+###  https://w3id.org/i40/sto#Programmability
+sto:Programmability rdf:type owl:NamedIndividual ,
+                             sto:Concern ;
+                    dul:isPartOf sto:EdgeComputing ;
+                    rdfs:comment "In the edge computing, computation is offloaded from the cloud, and the edge nodes are most likely heterogeneous platforms. In this case, the runtime of these nodes differ from each other, and the programmer faces huge difficulties to write an application that may be deployed in the edge computing paradigm." ;
+                    rdfs:label "Programmability" .
+
+
 ###  https://w3id.org/i40/sto#ProjectManager
 sto:ProjectManager rdf:type owl:NamedIndividual ,
                             <http://voag.linkedmodel.org/voag#StakeholderGroup> .
@@ -12369,7 +12383,8 @@ sto:QUIC rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/i40/sto#QualityOfService
 sto:QualityOfService rdf:type owl:NamedIndividual ,
                               sto:Concern ;
-                     dul:isPartOf sto:ServiceDescription ;
+                     dul:isPartOf sto:EdgeComputing ,
+                                  sto:ServiceDescription ;
                      rdfs:comment "Quality of service (QoS) is the overall performance of a telephony or computer network, particularly the performance seen by the users of the network. To quantitatively measure quality of service, several related aspects of the network service are often considered, such as error rates, bit rate, throughput, transmission delay, availability, jitter, etc. In the field of computer networking and other packet-switched telecommunication networks, quality of service refers to traffic prioritization and resource reservation control mechanisms rather than the achieved service quality. (source: wikipedia)"@en ;
                      rdfs:label "Quality of Service"@en ;
                      rdfs:seeAlso "IoT-A Requirement UNI.613" ,
@@ -12933,6 +12948,7 @@ sto:Safety rdf:type owl:NamedIndividual ,
 sto:Scalability rdf:type owl:NamedIndividual ,
                          sto:Concern ;
                 dcterms:creator sto:sebastian ;
+                dul:isPartOf sto:EdgeComputing ;
                 rdfs:comment "Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged in order to accommodate that growth. For example, it can refer to the capability of a system to increase its total output under an increased load when resources (typically hardware) are added. An analogous meaning is implied when the word is used in an economic context, where scalability of a company implies that the underlying business model offers the potential for economic growth within the company. Scalability, as a property of systems, is generally difficult to define and in any particular case it is necessary to define the specific requirements for scalability on those dimensions that are deemed important. It is a highly significant issue in electronics systems, databases, routers, and networking. (source: wikipedia)"@en ;
                 rdfs:label "Scalability"@en ;
                 rdfs:seeAlso "IoT-A Requirement UNI.026" ,
@@ -14365,12 +14381,90 @@ sto:xTee rdf:type owl:NamedIndividual ,
                                         sto:hasOfficialResource <http://www.vdi.eu/nc/guidelines/vdivde_2182_blatt_1-informationssicherheit_in_der_industriellen_automatisierung_allgemeines_vorgehensmode/> .
 
 
-###  https://w3id.org/i40/sto/Programmability
-:Programmability rdf:type owl:NamedIndividual ,
-                          sto:Concern ;
-                 dul:isComponentOf sto:EdgeComputing ;
-                 rdfs:comment "In the edge computing, computation is offloaded from the cloud, and the edge nodes are most likely heterogeneous platforms. In this case, the runtime of these nodes differ from each other, and the programmer faces huge difficulties to write an application that may be deployed in the edge computing paradigm." ;
-                 rdfs:label "Programmability" .
+###  https://w3id.org/i40/sto/Auto_Scaling
+:Auto_Scaling rdf:type owl:NamedIndividual ,
+                       sto:Concern ;
+              dcterms:creator sto:MuhammadUsman ;
+              dul:isPartOf sto:CloudComputing ,
+                           sto:EdgeComputing ;
+              rdfs:comment "Autoscaling, also spelled auto scaling or auto-scaling, and sometimes also called automatic scaling, is a method used in cloud computing, whereby the amount of computational resources in a server farm, typically measured in terms of the number of active servers, scales automatically based on the load on the farm. It is closely related to, and builds upon, the idea of load balancing."@en ;
+              rdfs:label "Auto Scaling"@en ;
+              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Autoscaling"@en .
+
+
+###  https://w3id.org/i40/sto/Computation-Centric_Architecture
+:Computation-Centric_Architecture rdf:type owl:NamedIndividual ,
+                                           sto:Concern ;
+                                  dcterms:creator sto:MuhammadUsman ;
+                                  dul:isPartOf sto:EdgeComputing ;
+                                  rdfs:comment "New computation-centric architectures are needed to address the need for fast resolution of network functions that are executed at the edges of the network."@en ;
+                                  rdfs:label "Computation-Centric Architecture"@en .
+
+
+###  https://w3id.org/i40/sto/Data_Dissemination_Strategies
+:Data_Dissemination_Strategies rdf:type owl:NamedIndividual ,
+                                        sto:Concern ;
+                               dcterms:creator sto:MuhammadUsman ;
+                               dul:isPartOf sto:EdgeComputing ;
+                               rdfs:comment "How to distribute information in a timely and efficient manner in distributed systems?"@en ;
+                               rdfs:label "Data Dissemination Strategies"@en ;
+                               sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_dissemination"@en .
+
+
+###  https://w3id.org/i40/sto/Data_Handling
+:Data_Handling rdf:type owl:NamedIndividual ,
+                        sto:Concern ;
+               dcterms:creator sto:MuhammadUsman ;
+               dul:isPartOf sto:EdgeComputing ;
+               rdfs:comment """How to collect and process the large amount of data created by the various stakeholders and perform actions such as filtering, pre-processing and
+live processing to extract useful information."""@en ;
+               rdfs:label "Data Handling"@en .
+
+
+###  https://w3id.org/i40/sto/Deployment_Strategies_and_Orchestration
+:Deployment_Strategies_and_Orchestration rdf:type owl:NamedIndividual ,
+                                                  sto:Concern ;
+                                         dcterms:creator sto:MuhammadUsman ;
+                                         dul:isPartOf sto:EdgeComputing ;
+                                         rdfs:comment """The task of establishing suitable deployment strategies has some things in common with the scalability challenge. On the one hand, this includes questions like where to deploy applications/services and content. On the other hand, it also raises questions on where to place edge clouds or resources with respect to
+communication bandwidth, computation power or data storage.
+These issues grow even bigger when such a deployment is not de-
+fined statically but can vary over the lifetime of the system."""@en ;
+                                         rdfs:label "Deployment Strategies and Orchestration"@en ;
+                                         sto:hasDBpediaResource "http://dbpedia.org/page/Orchestration_(computing)"@en ;
+                                         sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Deployment"@en ,
+                                                                 "https://en.wikipedia.org/wiki/Orchestration_(computing)"@en .
+
+
+###  https://w3id.org/i40/sto/Fairness
+:Fairness rdf:type owl:NamedIndividual ,
+                   sto:Concern ;
+          dcterms:creator sto:MuhammadUsman ;
+          dul:isPartOf sto:EdgeComputing ;
+          rdfs:comment "How can a fair and non-discriminating access to (compute and storage) resources be established?"@en ;
+          rdfs:label "Fairness"@en ;
+          sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Fairness"@en .
+
+
+###  https://w3id.org/i40/sto/Mobility
+:Mobility rdf:type owl:NamedIndividual ,
+                   sto:Concern ;
+          dcterms:creator sto:MuhammadUsman ;
+          dul:isPartOf sto:EdgeComputing ;
+          rdfs:comment """How to handle the massive mobility of vehicles? In the case of an application scenario that involves connected vehicles, mobility is a major issue and includes data consumer as well as data producer. In this particular case, one of the influencing factors is the potential speed of a vehicle. High-speed mobility may
+lead to situations in which a request for data or a service may not be answered before the vehicle disconnects and re-connects to another network entry point. This leads to unfulfilled requests and potential duplication of efforts."""@en ;
+          rdfs:label "Mobility"@en ;
+          rdfs:seeAlso "https://en.wikipedia.org/wiki/Connected_car"@en ;
+          sto:hasDBpediaResource "http://dbpedia.org/page/Mobility"@en ;
+          sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Mobility"@en .
+
+
+###  https://w3id.org/i40/sto/Secure_Payment_System
+:Secure_Payment_System rdf:type owl:NamedIndividual ,
+                                sto:Concern ;
+                       dcterms:creator sto:MuhammadUsman ;
+                       dul:isPartOf sto:EdgeComputing ;
+                       rdfs:label "Secure Payment System"@en .
 
 
 ###  https://w3id.org/ids/core/TrustedConnector
@@ -14682,8 +14776,8 @@ Vertical concerns address cross-cutting issues, which may affect all the horizon
 
 
 sto:Concern rdfs:label "Concern" ;
-            sto:hasDBpediaResource <http://dbpedia.org/resource/ISO/IEC_42010> ;
             sto:hasOfficialResource <http://www.iso-architecture.org/42010/> ;
+            sto:hasDBpediaResource <http://dbpedia.org/resource/ISO/IEC_42010> ;
             sto:hasWikipediaArticle <https://en.wikipedia.org/wiki/ISO/IEC_42010#Conceptual_Model_-_Concern> ;
             rdfs:comment "A concern regards a specific challenge or topic as defined by ISO42010. Each concern should at least be regarded by one view of an architecture."@en .
 
@@ -14707,8 +14801,8 @@ sto:GeospatialQuery rdfs:seeAlso "IoT-A Requirement UNI.401" .
 
 
 sto:InternationalClassificationForStandards rdfs:seeAlso <https://www.iso.org/publication/PUB100033.html> ;
-                                            rdfs:label "International Classification For Standards"@en ;
                                             sto:hasOfficialResource <https://www.iso.org/publication/PUB100033.html> ;
+                                            rdfs:label "International Classification For Standards"@en ;
                                             rdfs:comment "Serves as a structure for catalogues of international, regional and national standards and other normative documents, and as a basis for standing-order systems."@en .
 
 
@@ -14752,24 +14846,24 @@ sto:SyntacticInteroperablity rdfs:seeAlso "IoT-A Requirement UNI.315" ,
                                           "IoT-A Requirement UNI.311" .
 
 
-sto:TechnicalCommittee skos:note "1.sto:       a property explaining that TC and SC are managed by SMB (Standardization Management Board) needs to be added" ;
-                       rdfs:label "Technical Committee"@en ;
-                       rdfs:seeAlso <http://www.iec.ch/dyn/www/f?p=103:62:9979528650478:::62:FSP_ORG_ID,FSP_LANG_ID:,25> ;
+sto:TechnicalCommittee rdfs:label "Technical Committee"@en ;
+                       skos:note "1.sto:       a property explaining that TC and SC are managed by SMB (Standardization Management Board) needs to be added" ;
                        rdfs:comment "Specifies the representitive code name of the Technical Committee that covers a Standard for e.g, TC 1, SC 3C. Many thousand experts carry out standardization work in the IEC in TCs (technical committees) and SCs (subcommittees), in hundreds of working groups, project and maintenance teams. They represent the national electrotechnical needs of IEC Member countries and of many Affiliates at the global level in the IEC. These technical experts are sent by industry, governments, test and research laboratories, academia and even consumer groups to work on the global, neutral and independent platform of the IEC. That's where they develop globally relevant, voluntary, consensus based IEC International Standards."@en ;
+                       rdfs:seeAlso <http://www.iec.ch/dyn/www/f?p=103:62:9979528650478:::62:FSP_ORG_ID,FSP_LANG_ID:,25> ;
                        rdfs:isDefinedBy sto:IEC .
 
 
 sto:TechnicalReport cc:attributionURL "http://www.iec.ch"^^xsd:string ;
                     rdfs:isDefinedBy sto:IEC ;
                     rdfs:comment "Technical Reports contain collected data of a kind different from that normally published as an International Standard, for example data obtained from a survey carried out among national committees, data of work in other international organizations or data on \"the state of the art\" in relation to standards of national committees on a particular subject.Technical Reports are entirely informative in nature and shall not contain matter implying that they are normative"@en ;
-                    rdfs:label "Technical Report"@en ;
                     rdfs:seeAlso <http://www.iec.ch/standardsdev/publications/tr.htm> ;
+                    rdfs:label "Technical Report"@en ;
                     rdfs:comment "Specifies that a given Publication is a Technical Report"@en .
 
 
-sto:TechnicalSpecification rdfs:label "Technical Specification"@en ;
-                           rdfs:comment "Technical Specifications are often published when the subject under question is still under development or when insufficient consensus for approval of an International Standard is available.Technical Specifications approach International Standards in terms of detail and completeness, but have not yet passed through all approval stages either because consensus has not been reached or because standardization is seen to be premature."@en ,
+sto:TechnicalSpecification rdfs:comment "Technical Specifications are often published when the subject under question is still under development or when insufficient consensus for approval of an International Standard is available.Technical Specifications approach International Standards in terms of detail and completeness, but have not yet passed through all approval stages either because consensus has not been reached or because standardization is seen to be premature."@en ,
                                         "Specifies that a given Publication is a Technical Specification"@en ;
+                           rdfs:label "Technical Specification"@en ;
                            cc:attributionURL <http://www.iec.ch> ;
                            rdfs:isDefinedBy sto:IEC ;
                            rdfs:seeAlso <http://www.iec.ch/standardsdev/publications/ts.htm> .
@@ -14781,8 +14875,8 @@ sto:Technology rdfs:label "Technology"@en ;
 
 
 sto:Viewpoint rdfs:comment "ISO 42010 definition of a Viewpoint"@en ;
-              sto:hasDBpediaResource <http://dbpedia.org/resource/ISO/IEC_42010> ;
               rdfs:seeAlso <https://www.iso.org/standard/50508.html> ;
+              sto:hasDBpediaResource <http://dbpedia.org/resource/ISO/IEC_42010> ;
               sto:hasWikipediaArticle <https://en.wikipedia.org/wiki/ISO/IEC_42010#Conceptual_Model_-_Architecture_Viewpoint> ;
               dcterms:creator "sebastian" ;
               sto:hasOfficialResource <http://www.iso-architecture.org/42010/> ;
