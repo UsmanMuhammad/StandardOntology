@@ -14401,6 +14401,18 @@ sto:xTee rdf:type owl:NamedIndividual ,
                                   rdfs:label "Computation-Centric Architecture"@en .
 
 
+###  https://w3id.org/i40/sto/Confidentiality
+:Confidentiality rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:EdgeComputing ,
+                              sto:Privacy ,
+                              sto:Security ;
+                 rdfs:comment "Confidentiality involves a set of rules or a promise usually executed through confidentiality agreements that limits access or places restrictions on certain types of information."@en ;
+                 rdfs:label "Confidentiality"@en ;
+                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Confidentiality"@en .
+
+
 ###  https://w3id.org/i40/sto/Data_Dissemination_Strategies
 :Data_Dissemination_Strategies rdf:type owl:NamedIndividual ,
                                         sto:Concern ;
