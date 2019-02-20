@@ -1729,7 +1729,11 @@ rami:EnergyEfficiency rdf:type owl:NamedIndividual ,
                                rami:AdminShellSubmodel ,
                                sto:Concern ,
                                sto:StandardClassification ;
-                      sto:isDescribedin sto:AdministrationShell .
+                      dul:isPartOf sto:CloudComputing ;
+                      sto:isDescribedin sto:AdministrationShell ;
+                      rdfs:comment "Efficient energy use, sometimes simply called energy efficiency, is the goal to reduce the amount of energy required to provide products and services."@en ;
+                      rdfs:label "Energy Efficiency"@en ;
+                      sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Efficient_energy_use"@en .
 
 
 ###  https://w3id.org/i40/rami#Engineering
@@ -2124,7 +2128,8 @@ sto:ASME_Y1441 rdf:type owl:NamedIndividual ,
 sto:AccessPolicy rdf:type owl:NamedIndividual ,
                           sto:Concern ;
                  dcterms:creator sto:sebastian ;
-                 dul:isPartOf sto:DataAccessControl ;
+                 dul:isPartOf sto:CloudComputing ,
+                              sto:DataAccessControl ;
                  rdfs:comment "Access to the service shall be regulated by access policies. Users entitled in access policies to envoke a given service must be able to actually envoke it."@en ;
                  rdfs:label "Access Policy"@en ;
                  rdfs:seeAlso "IoT-A Requirement UNI.604" .
@@ -2229,7 +2234,8 @@ sto:Anonymity rdf:type owl:NamedIndividual ,
 sto:Authentication rdf:type owl:NamedIndividual ,
                             sto:Concern ;
                    dcterms:creator sto:sebastian ;
-                   dul:isPartOf sto:EdgeComputing ,
+                   dul:isPartOf sto:CloudComputing ,
+                                sto:EdgeComputing ,
                                 sto:Security ;
                    rdfs:comment "Authentication before opening a valid connection; this can be done by just verifying the server identity or doing mutual authentication."@en ;
                    rdfs:label "Authentication"@en ;
@@ -2240,7 +2246,9 @@ sto:Authentication rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/i40/sto#Authorization
 sto:Authorization rdf:type owl:NamedIndividual ,
                            sto:Concern ;
-                  dul:isPartOf sto:Privacy ,
+                  dul:isPartOf sto:CloudComputing ,
+                               sto:EdgeComputing ,
+                               sto:Privacy ,
                                sto:Security ;
                   rdfs:seeAlso "IoT-A Requirement UNI.319" ,
                                "IoT-A Requirement UNI.502" ,
@@ -2293,7 +2301,8 @@ sto:AutonomousConfiguration rdf:type owl:NamedIndividual ,
 sto:Availability rdf:type owl:NamedIndividual ,
                           sto:Concern ;
                  dcterms:creator sto:sebastian ;
-                 dul:isPartOf sto:EdgeComputing ,
+                 dul:isPartOf sto:CloudComputing ,
+                              sto:EdgeComputing ,
                               sto:Security ;
                  rdfs:comment "In reliability theory and reliability engineering, the term availability has the following meanings: * The degree to which a system, subsystem or equipment is in a specified operable and committable state at the start of a mission, when the mission is called for at an unknown, i.e. a random, time. Simply put, availability is the proportion of time a system is in a functioning condition. This is often described as a mission capable rate. Mathematically, this is expressed as 100% minus unavailability. * The ratio of (a) the total time a functional unit is capable of being used during a given interval to (b) the length of the interval. For example, a unit that is capable of being used 100 hours per week (168 hours) would have an availability of 100/168. However, typical availability values are specified in decimal (such as 0.9998). In high availability applications, a metric known as nines, corresponding to the number of nines following the decimal point, is used. With this convention, \"five nines\" equals 0.99999 (or 99.999%) availability. (source: wikipedia)"@en ;
                  rdfs:label "Availability"@en ;
@@ -2305,6 +2314,16 @@ sto:Availability rdf:type owl:NamedIndividual ,
                               "IoT-A Requirement UNI.610" ,
                               "IoT-A Requirement UNI.616" ;
                  sto:hasDBpediaResource <http://dbpedia.org/resource/Availability> .
+
+
+###  https://w3id.org/i40/sto#Awareness
+sto:Awareness rdf:type owl:NamedIndividual ,
+                       sto:Concern ;
+              dcterms:creator sto:MuhammadUsman ;
+              dul:isPartOf sto:EdgeComputing ;
+              rdfs:comment "Awareness is the ability to directly know and perceive, to feel, or to be cognizant of events. More broadly, it is the state of being conscious of something. Another definition describes it as a state wherein a subject is aware of some information when that information is directly available to bring to bear in the direction of a wide range of behavioral processes. The concept is often synonymous to consciousness and is also understood as being consciousness itself."@en ;
+              rdfs:label "Awareness"@en ;
+              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Awareness"@en .
 
 
 ###  https://w3id.org/i40/sto#B2MML
@@ -2403,6 +2422,17 @@ sto:BPMN rdf:type owl:NamedIndividual ,
          sto:hasDBpediaResource <http://dbpedia.org/page/Business_Process_Model_and_Notation> ;
          sto:hasOfficialResource <http://www.bpmn.org/> ;
          sto:hasWikipediaArticle <https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation> .
+
+
+###  https://w3id.org/i40/sto#Bandwidth
+sto:Bandwidth rdf:type owl:NamedIndividual ,
+                       sto:Concern ;
+              dcterms:creator sto:MuhammadUsman ;
+              dul:isPartOf sto:EdgeComputing ,
+                           sto:Optimization_Matrics ;
+              rdfs:comment "In computing, bandwidth is the maximum rate of data transfer across a given path. Bandwidth may be characterized as network bandwidth, data bandwidth, or digital bandwidth."@en ;
+              rdfs:label "Bandwidth"@en ;
+              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Bandwidth_(computing)"@en .
 
 
 ###  https://w3id.org/i40/sto#BdvaCloudAndHighPerformanceComputing
@@ -2857,7 +2887,8 @@ sto:Concern rdf:type owl:NamedIndividual ,
 sto:Confidentiality rdf:type owl:NamedIndividual ,
                              sto:Concern ;
                     dcterms:creator sto:MuhammadUsman ;
-                    dul:isPartOf sto:EdgeComputing ,
+                    dul:isPartOf sto:CloudComputing ,
+                                 sto:EdgeComputing ,
                                  sto:Privacy ,
                                  sto:Security ;
                     rdfs:comment "Confidentiality involves a set of rules or a promise usually executed through confidentiality agreements that limits access or places restrictions on certain types of information."@en ;
@@ -2890,6 +2921,18 @@ sto:ContextAwareness rdf:type owl:NamedIndividual ,
                      sto:hasDBpediaResource <http://dbpedia.org/resource/Context_awareness> .
 
 
+###  https://w3id.org/i40/sto#Cost
+sto:Cost rdf:type owl:NamedIndividual ,
+                  sto:Concern ;
+         dcterms:creator sto:MuhammadUsman ;
+         dul:isPartOf sto:EdgeComputing ,
+                      sto:Optimization_Matrics ;
+         rdfs:label "Cost"@en ;
+         sto:hasDBpediaResource "In business, the cost may be one of acquisition, in which case the amount of money expended to acquire it is counted as cost. In this case, money is the input that is gone in order to acquire the thing."@en ,
+                                "http://dbpedia.org/page/Cost"@en ;
+         sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Cost"@en .
+
+
 ###  https://w3id.org/i40/sto#CrossDomainIdentityManagement
 sto:CrossDomainIdentityManagement rdf:type owl:NamedIndividual ,
                                            sto:Concern ;
@@ -2914,6 +2957,17 @@ sto:CrossLevel rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/i40/sto#Customer
 sto:Customer rdf:type owl:NamedIndividual ,
                       <http://voag.linkedmodel.org/voag#StakeholderGroup> .
+
+
+###  https://w3id.org/i40/sto#Cyber_Security
+sto:Cyber_Security rdf:type owl:NamedIndividual ,
+                            sto:Concern ;
+                   dcterms:creator sto:MuhammadUsman ;
+                   dul:isPartOf sto:EdgeComputing ,
+                                sto:Security ;
+                   rdfs:comment "Computer security, cybersecurity or information technology security (IT security) is the protection of computer systems from theft or damage to their hardware, software or electronic data, as well as from disruption or misdirection of the services they provide."@en ;
+                   rdfs:label "Cyber Security"@en ;
+                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Computer_security"@en .
 
 
 ###  https://w3id.org/i40/sto#DDS
@@ -3429,6 +3483,26 @@ sto:DataUsageControl rdf:type owl:NamedIndividual ,
                      rdfs:label "Data Usage Control"@en .
 
 
+###  https://w3id.org/i40/sto#Data_Abstraction
+sto:Data_Abstraction rdf:type owl:NamedIndividual ,
+                              sto:Concern ;
+                     dcterms:creator sto:MuhammadUsman ;
+                     dul:isPartOf sto:EdgeComputing ;
+                     rdfs:comment """\"Data abstraction has been well discussed and researched in the wireless sensor network and cloud computing paradigm. However, in edge computing, this issue becomes more challenging. With IoT, there would be a huge number of data generators in the network, and here we take a smart home environment as an
+example. In a smart home, almost all of the things will report data to the edgeOS, not to mention the large number of things deployed all around the home. However, most of the things at the edge of the network, only periodically report sensed data to the gateway.\""""@en ;
+                     rdfs:label "Data Abstraction"@en ;
+                     sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Abstraction_(computer_science)#Data_abstraction"@en .
+
+
+###  https://w3id.org/i40/sto#Data_Confidentiality
+sto:Data_Confidentiality rdf:type owl:NamedIndividual ,
+                                  sto:Concern ;
+                         dcterms:creator sto:MuhammadUsman ;
+                         dul:isPartOf sto:CloudComputing ,
+                                      sto:EdgeComputing ;
+                         rdfs:label "Data Confidentiality"@en .
+
+
 ###  https://w3id.org/i40/sto#Data_Dissemination_Strategies
 sto:Data_Dissemination_Strategies rdf:type owl:NamedIndividual ,
                                            sto:Concern ;
@@ -3447,6 +3521,17 @@ sto:Data_Handling rdf:type owl:NamedIndividual ,
                   rdfs:comment """How to collect and process the large amount of data created by the various stakeholders and perform actions such as filtering, pre-processing and
 live processing to extract useful information."""@en ;
                   rdfs:label "Data Handling"@en .
+
+
+###  https://w3id.org/i40/sto#Data_Integrity
+sto:Data_Integrity rdf:type owl:NamedIndividual ,
+                            sto:Concern ;
+                   dcterms:creator sto:MuhammadUsman ;
+                   dul:isPartOf sto:CloudComputing ,
+                                sto:EdgeComputing ;
+                   rdfs:comment "Data integrity is the maintenance of, and the assurance of the accuracy and consistency of, data over its entire life-cycle, and is a critical aspect to the design, implementation and usage of any system which stores, processes, or retrieves data."@en ;
+                   rdfs:label "Data Integrity"@en ;
+                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_integrity"@en .
 
 
 ###  https://w3id.org/i40/sto#DecisionMaker
@@ -3482,6 +3567,17 @@ sto:DeviceLevel rdf:type owl:NamedIndividual ,
                 rdfs:label "Device Level"@en .
 
 
+###  https://w3id.org/i40/sto#Differentiation
+sto:Differentiation rdf:type owl:NamedIndividual ,
+                             sto:Concern ;
+                    dcterms:creator sto:MuhammadUsman ;
+                    dul:isPartOf sto:EdgeComputing ;
+                    rdfs:comment """With the fast growth of IoT deployment, we expected multiple services will be deployed at the edge of the network, such as Smart Home. These services will
+have different priorities. For example, critical services such as things diagnosis and failure alarm should be processed earlier than ordinary service. Health related service, for example, fall detection or heart failure detection should also have a higher priority compared with other service such as entertainment."""@en ;
+                    rdfs:label "Differentiation"@en ;
+                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Differentiation"@en .
+
+
 ###  https://w3id.org/i40/sto#DigiMesh
 sto:DigiMesh rdf:type owl:NamedIndividual ,
                       foaf:Document ,
@@ -3491,6 +3587,17 @@ sto:DigiMesh rdf:type owl:NamedIndividual ,
              rdfs:comment "DigiMesh is a proprietary peer-to-peer networking topology for use in wireless end-point connectivity solutions. (source: https://www.postscapes.com/internet-of-things-protocols/)"@en ;
              rdfs:label "DigiMesh"@en ;
              sto:hasOfficialResource <http://www.digi.com/technology/digimesh/> .
+
+
+###  https://w3id.org/i40/sto#Distribution
+sto:Distribution rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:CloudComputing ;
+                 rdfs:comment "A distributed system is a system whose components are located on different networked computers, which communicate and coordinate their actions by passing messages to one another. The components interact with one another in order to achieve a common goal."@en ;
+                 rdfs:label "Distribution"@en ;
+                 sto:hasDBpediaResource "http://dbpedia.org/page/Category:Distributed_computing"@en ;
+                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Distributed_computing"@en .
 
 
 ###  https://w3id.org/i40/sto#DmaArchitecture
@@ -3873,6 +3980,15 @@ sto:EdgecrossWhitepaper rdf:type owl:NamedIndividual ,
                         sto:hasOfficialResource <https://www.edgecross.org/ja/data-download/pdf/Edgecross_Consortium_WP(E).pdf> .
 
 
+###  https://w3id.org/i40/sto#Efficient_Tools_Missing
+sto:Efficient_Tools_Missing rdf:type owl:NamedIndividual ,
+                                     sto:Concern ;
+                            dcterms:creator sto:MuhammadUsman ;
+                            dul:isPartOf sto:EdgeComputing ;
+                            rdfs:comment "Some of the things are highly resource constrained so the current methods for security protection might not be able to be deployed on thing because they are resource hungry. Moreover, the highly dynamic environment at the edge of the network also makes the network become vulnerable or unprotected."@en ;
+                            rdfs:label "Missing Of Efficient Tools"@en .
+
+
 ###  https://w3id.org/i40/sto#EnOcean
 sto:EnOcean rdf:type owl:NamedIndividual ,
                      foaf:Document ,
@@ -3980,6 +4096,16 @@ sto:ExecutionVariability rdf:type owl:NamedIndividual ,
                          rdfs:label "Execution Variability"@en .
 
 
+###  https://w3id.org/i40/sto#Extensibility
+sto:Extensibility rdf:type owl:NamedIndividual ,
+                           sto:Concern ;
+                  dcterms:creator sto:MuhammadUsman ;
+                  dul:isPartOf sto:EdgeComputing ;
+                  rdfs:comment "\"Extensibility could be a huge challenge at the edge of the network, unlike a mobile system, the things in the IoT could be very dynamic. When the owner purchases a new thing, can it be easily added to the current service without any problem? Or when one thing is replaced due to wearing out, can the previous service adopt a new node easily? These problems should be solved with a flexible and extensible design of service management layer in the edgeOS.\""@en ;
+                  rdfs:label "Extensibility"@en ;
+                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Extensibility"@en .
+
+
 ###  https://w3id.org/i40/sto#FIWARE
 sto:FIWARE rdf:type owl:NamedIndividual ,
                     foaf:Organization ,
@@ -4005,6 +4131,17 @@ sto:Fairness rdf:type owl:NamedIndividual ,
              rdfs:comment "How can a fair and non-discriminating access to (compute and storage) resources be established?"@en ;
              rdfs:label "Fairness"@en ;
              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Fairness"@en .
+
+
+###  https://w3id.org/i40/sto#Fault_Tolerance
+sto:Fault_Tolerance rdf:type owl:NamedIndividual ,
+                             sto:Concern ;
+                    dcterms:creator sto:MuhammadUsman ;
+                    dul:isPartOf sto:CloudComputing ;
+                    rdfs:comment "Fault tolerance is the property that enables a system to continue operating properly in the event of the failure of some (one or more faults within) of its components. If its operating quality decreases at all, the decrease is proportional to the severity of the failure, as compared to a naively designed system in which even a small failure can cause total breakdown."@en ;
+                    rdfs:label "Fault Tolerance"@en ;
+                    sto:hasDBpediaResource "http://dbpedia.org/page/Category:Fault-tolerant_computer_systems"@en ;
+                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Fault_tolerance"@en .
 
 
 ###  https://w3id.org/i40/sto#FileSizeIEC_60027_2006
@@ -10893,7 +11030,8 @@ sto:IndustrialProcessMeasurementControl rdf:type owl:NamedIndividual ,
 sto:IntegrityProtection rdf:type owl:NamedIndividual ,
                                  sto:Concern ;
                         dcterms:creator sto:sebastian ;
-                        dul:isPartOf sto:EdgeComputing ,
+                        dul:isPartOf sto:CloudComputing ,
+                                     sto:EdgeComputing ,
                                      sto:Security ;
                         <http://voag.linkedmodel.org/voag#hasStakeholder> "Device/Service Owner" ;
                         rdfs:comment "In telecommunications, the term system integrity has the following meanings: 1. * That condition of a system wherein its mandated operational and technical parameters are within the prescribed limits. 2. * The quality of an AIS when it performs its intended function in an unimpaired manner, free from deliberate or inadvertent unauthorized manipulation of the system. 3. * The state that exists when there is complete assurance that under all conditions an IT system is based on the logical correctness and reliability of the operating system, the logical completeness of the hardware and software that implement the protection mechanisms, and data integrity. (source: wikipedia)"@en ,
@@ -10955,6 +11093,8 @@ sto:InternationalClassificationForStandards rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/i40/sto#Interoperability
 sto:Interoperability rdf:type owl:NamedIndividual ,
                               sto:Concern ;
+                     dul:isPartOf sto:CloudComputing ,
+                                  sto:EdgeComputing ;
                      <http://voag.linkedmodel.org/voag#hasStakeholder> <https://w3id.org/i40/GeneralMAnager> ,
                                                                        <https://www.wikidata.org/wiki/Q1548249> ;
                      rdfs:comment "A systems ability to connect with other systems."@en ,
@@ -11182,6 +11322,16 @@ sto:IpsoAppFramework rdf:type owl:NamedIndividual ,
                      sto:hasOfficialResource <http://www.ipso-alliance.org/wp-content/media/draft-ipso-app-framework-04.pdf> .
 
 
+###  https://w3id.org/i40/sto#Isolation
+sto:Isolation rdf:type owl:NamedIndividual ,
+                       sto:Concern ;
+              dcterms:creator sto:MuhammadUsman ;
+              dul:isPartOf sto:EdgeComputing ;
+              rdfs:comment "\"Isolation would be another issue at the edge of the network. In mobile OS, if an application fails or crashes, the whole system will usually crash and reboot. Or in a distributed system the shared resource could be managed with different synchronization mechanisms such as a lock or token ring. \""@en ;
+              rdfs:label "Isolation"@en ;
+              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Isolation"@en .
+
+
 ###  https://w3id.org/i40/sto#Ivi
 sto:Ivi rdf:type owl:NamedIndividual ,
                  foaf:Organization ,
@@ -11343,6 +11493,17 @@ sto:LWM2M rdf:type owl:NamedIndividual ,
           rdfs:comment "LWM2M (Lightweight M2M) is a system standard in the Open Mobile Alliance. It includes DTLS, CoAP, Block, Observe, SenML and Resource Directory and weaves them into a device-server interface along with an Object structure. (source: https://www.postscapes.com/internet-of-things-protocols/)"@en ;
           rdfs:label "LWM2M"@en ;
           sto:hasOfficialResource <http://yucianga.info/?p=786> .
+
+
+###  https://w3id.org/i40/sto#Latency
+sto:Latency rdf:type owl:NamedIndividual ,
+                     sto:Concern ;
+            dcterms:creator sto:MuhammadUsman ;
+            dul:isPartOf sto:EdgeComputing ,
+                         sto:Optimization_Matrics ;
+            rdfs:comment "Latency is a time interval between the stimulation and response, or, from a more general point of view, a time delay between the cause and the effect of some physical change in the system being observed."@en ;
+            rdfs:label "Latency"@en ;
+            sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Latency_(engineering)"@en .
 
 
 ###  https://w3id.org/i40/sto#LinkedData
@@ -11852,6 +12013,16 @@ sto:NIST_800-146 rdf:type owl:NamedIndividual ,
                  sto:hasOfficialResource <https://csrc.nist.gov/publications/detail/sp/800-146/final> .
 
 
+###  https://w3id.org/i40/sto#Naming
+sto:Naming rdf:type owl:NamedIndividual ,
+                    sto:Concern ;
+           dcterms:creator sto:MuhammadUsman ;
+           dul:isPartOf sto:EdgeComputing ;
+           rdfs:comment "At the top of the edge nodes, there are a lot of applications running, and each application has its own structure about how the service is provided. an efficient naming mechanism for the edge computing paradigm has not been built and standardized yet. Edge practitioners usually needs to learn various communication and network protocols in order to communicate with the heterogeneous things in their system. The naming scheme for edge computing needs to handle the mobility of things, highly dynamic network topology, privacy and security protection, as well as the scalability targeting the tremendously large amount of unreliable things."@en ;
+           rdfs:label "Naming"@en ;
+           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Computer_network_naming_scheme"@en .
+
+
 ###  https://w3id.org/i40/sto#NanoIP
 sto:NanoIP rdf:type owl:NamedIndividual ,
                     foaf:Document ,
@@ -12284,6 +12455,16 @@ sto:OpenWSN rdf:type owl:NamedIndividual ,
             sto:hasOfficialResource <https://openwsn.atlassian.net/wiki/pages/viewpage.action?pageId=688187> .
 
 
+###  https://w3id.org/i40/sto#Optimization_Matrics
+sto:Optimization_Matrics rdf:type owl:NamedIndividual ,
+                                  sto:Concern ;
+                         dcterms:creator sto:MuhammadUsman ;
+                         dul:isPartOf sto:EdgeComputing ;
+                         rdfs:comment """\"In edge computing, we have multiple layers with different computation capability. Workload allocation becomes a big issue. We need to decide which layer to handle the workload or how many tasks to assign at each part. There are multiple allocation strategies to complete a workload, for instances, evenly distribute the workload on each layer or complete as much as possible on each layer. The extreme cases are fully operated on endpoint or fully operated on cloud. To choose
+an optimal allocation strategy, we discuss several optimization metrics in this section, including latency, bandwidth, energy and cost.\""""@en ;
+                         rdfs:label "Optimization Metrics"@en .
+
+
 ###  https://w3id.org/i40/sto#OrionContextBroker
 sto:OrionContextBroker rdf:type owl:NamedIndividual ,
                                 foaf:Document ,
@@ -12328,7 +12509,9 @@ sto:PlatformIndustry40 rdf:type owl:NamedIndividual ,
 sto:Privacy rdf:type owl:NamedIndividual ,
                      sto:Concern ;
             dcterms:creator sto:sebastian ;
-            dul:isPartOf sto:DataSovereignty ,
+            dul:isPartOf sto:CloudComputing ,
+                         sto:DataSovereignty ,
+                         sto:EdgeComputing ,
                          sto:Trustworthiness ;
             rdfs:comment "Information privacy, or data privacy (or data protection), is the relationship between collection and dissemination of data, technology, the public expectation of privacy, and the legal and political issues surrounding them. Privacy concerns exist wherever personally identifiable information or other sensitive information is collected, stored, used, and finally destroyed or deleted – in digital form or otherwise. Improper or non-existent disclosure control can be the root cause for privacy issues. Data privacy issues can arise in response to information from a wide range of sources, such as: * Healthcare records * Criminal justice investigations and proceedings * Financial institutions and transactions * Biological traits, such as genetic material * Residence and geographic records * Ethnicity * Privacy breach * Location-based service and geolocation * Web surfing behavior or user preferences using persistent cookies. (source: wikipedia)"@en ;
             rdfs:label "Privacy"@en ;
@@ -13087,7 +13270,9 @@ sto:Secure_Payment_System rdf:type owl:NamedIndividual ,
 sto:Security rdf:type owl:NamedIndividual ,
                       sto:Concern ;
              dcterms:creator sto:sebastian ;
-             dul:isPartOf sto:Trustworthiness ;
+             dul:isPartOf sto:CloudComputing ,
+                          sto:EdgeComputing ,
+                          sto:Trustworthiness ;
              <http://voag.linkedmodel.org/voag#hasStakeholder> <http://dbpedia.org/ontology/generalManager> ,
                                                                <https://www.wikidata.org/wiki/Q1548249> ;
              rdfs:comment "Information security, sometimes shortened to InfoSec, is the practice of defending information from unauthorized access, use, disclosure, disruption, modification, inspection, recording or destruction. It is a general term that can be used regardless of the form the data may take (e.g. electronic, physical). (source: wikipedia)"@en ;
@@ -13275,6 +13460,16 @@ sto:ServiceSelection rdf:type owl:NamedIndividual ,
                      dul:isPartOf sto:ServiceComposition ;
                      rdfs:comment "The ability of a system to invoke or deploy the desired service/Data App."@en ;
                      rdfs:label "Service Selection"@en .
+
+
+###  https://w3id.org/i40/sto#Service_Management
+sto:Service_Management rdf:type owl:NamedIndividual ,
+                                sto:Concern ;
+                       dcterms:creator sto:MuhammadUsman ;
+                       dul:isPartOf sto:EdgeComputing ;
+                       rdfs:comment "\"In terms of service management at the edge of the network, we argue that the following four fundamental features should be supported to guarantee a reliable system, including differentiation, extensibility, isolation, and reliability.\""@en ;
+                       rdfs:label "Service Management"@en ;
+                       sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Service_management"@en .
 
 
 ###  https://w3id.org/i40/sto#ServicelLevelAgreements
@@ -13864,7 +14059,8 @@ sto:Viewpoint rdf:type owl:NamedIndividual ,
 sto:VirtualEntity rdf:type owl:NamedIndividual ,
                            sto:Concern ;
                   dcterms:creator sto:sebastian ;
-                  dul:isPartOf sto:ThingRepresentation ;
+                  dul:isPartOf sto:CloudComputing ,
+                               sto:ThingRepresentation ;
                   rdfs:comment "Entities are provided through a virtual form."@en ;
                   rdfs:label "Virtual Entity"@en ;
                   rdfs:seeAlso "UNI.030"@en ,
@@ -14486,158 +14682,431 @@ sto:xTee rdf:type owl:NamedIndividual ,
                                         sto:hasOfficialResource <http://www.vdi.eu/nc/guidelines/vdivde_2182_blatt_1-informationssicherheit_in_der_industriellen_automatisierung_allgemeines_vorgehensmode/> .
 
 
-###  https://w3id.org/i40/sto/Awareness
-:Awareness rdf:type owl:NamedIndividual ,
-                    sto:Concern ;
-           dcterms:creator sto:MuhammadUsman ;
-           dul:isPartOf sto:EdgeComputing ;
-           rdfs:comment "Awareness is the ability to directly know and perceive, to feel, or to be cognizant of events. More broadly, it is the state of being conscious of something. Another definition describes it as a state wherein a subject is aware of some information when that information is directly available to bring to bear in the direction of a wide range of behavioral processes. The concept is often synonymous to consciousness and is also understood as being consciousness itself."@en ;
-           rdfs:label "Awareness"@en ;
-           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Awareness"@en .
-
-
-###  https://w3id.org/i40/sto/Bandwidth
-:Bandwidth rdf:type owl:NamedIndividual ,
-                    sto:Concern ;
-           dcterms:creator sto:MuhammadUsman ;
-           dul:isPartOf sto:EdgeComputing ,
-                        :Optimization_Matrics ;
-           rdfs:comment "In computing, bandwidth is the maximum rate of data transfer across a given path. Bandwidth may be characterized as network bandwidth, data bandwidth, or digital bandwidth."@en ;
-           rdfs:label "Bandwidth"@en ;
-           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Bandwidth_(computing)"@en .
-
-
-###  https://w3id.org/i40/sto/Cost
-:Cost rdf:type owl:NamedIndividual ,
-               sto:Concern ;
-      dcterms:creator sto:MuhammadUsman ;
-      dul:isPartOf sto:EdgeComputing ,
-                   :Optimization_Matrics ;
-      rdfs:label "Cost"@en ;
-      sto:hasDBpediaResource "In business, the cost may be one of acquisition, in which case the amount of money expended to acquire it is counted as cost. In this case, money is the input that is gone in order to acquire the thing."@en ,
-                             "http://dbpedia.org/page/Cost"@en ;
-      sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Cost"@en .
-
-
-###  https://w3id.org/i40/sto/Cyber_Security
-:Cyber_Security rdf:type owl:NamedIndividual ,
-                         sto:Concern ;
-                dcterms:creator sto:MuhammadUsman ;
-                dul:isPartOf sto:EdgeComputing ,
-                             sto:Security ;
-                rdfs:comment "Computer security, cybersecurity or information technology security (IT security) is the protection of computer systems from theft or damage to their hardware, software or electronic data, as well as from disruption or misdirection of the services they provide."@en ;
-                rdfs:label "Cyber Security"@en ;
-                sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Computer_security"@en .
-
-
-###  https://w3id.org/i40/sto/Data_Abstraction
-:Data_Abstraction rdf:type owl:NamedIndividual ,
-                           sto:Concern ;
-                  dcterms:creator sto:MuhammadUsman ;
-                  dul:isPartOf sto:EdgeComputing ;
-                  rdfs:comment """\"Data abstraction has been well discussed and researched in the wireless sensor network and cloud computing paradigm. However, in edge computing, this issue becomes more challenging. With IoT, there would be a huge number of data generators in the network, and here we take a smart home environment as an
-example. In a smart home, almost all of the things will report data to the edgeOS, not to mention the large number of things deployed all around the home. However, most of the things at the edge of the network, only periodically report sensed data to the gateway.\""""@en ;
-                  rdfs:label "Data Abstraction"@en ;
-                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Abstraction_(computer_science)#Data_abstraction"@en .
-
-
-###  https://w3id.org/i40/sto/Data_Confidentiality
-:Data_Confidentiality rdf:type owl:NamedIndividual ,
-                               sto:Concern ;
-                      dcterms:creator sto:MuhammadUsman ;
-                      dul:isPartOf sto:EdgeComputing ;
-                      rdfs:label "Data Confidentiality"@en .
-
-
-###  https://w3id.org/i40/sto/Data_Integrity
-:Data_Integrity rdf:type owl:NamedIndividual ,
-                         sto:Concern ;
-                dcterms:creator sto:MuhammadUsman ;
-                dul:isPartOf sto:EdgeComputing ;
-                rdfs:comment "Data integrity is the maintenance of, and the assurance of the accuracy and consistency of, data over its entire life-cycle, and is a critical aspect to the design, implementation and usage of any system which stores, processes, or retrieves data."@en ;
-                rdfs:label "Data Integrity"@en ;
-                sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_integrity"@en .
-
-
-###  https://w3id.org/i40/sto/Differentiation
-:Differentiation rdf:type owl:NamedIndividual ,
-                          sto:Concern ;
-                 dcterms:creator sto:MuhammadUsman ;
-                 dul:isPartOf sto:EdgeComputing ;
-                 rdfs:comment """With the fast growth of IoT deployment, we expected multiple services will be deployed at the edge of the network, such as Smart Home. These services will
-have different priorities. For example, critical services such as things diagnosis and failure alarm should be processed earlier than ordinary service. Health related service, for example, fall detection or heart failure detection should also have a higher priority compared with other service such as entertainment."""@en ;
-                 rdfs:label "Differentiation"@en ;
-                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Differentiation"@en .
-
-
-###  https://w3id.org/i40/sto/Efficient_Tools_Missing
-:Efficient_Tools_Missing rdf:type owl:NamedIndividual ,
+###  https://w3id.org/i40/sto/Abuse_and_Nefarious_use
+:Abuse_and_Nefarious_use rdf:type owl:NamedIndividual ,
                                   sto:Concern ;
                          dcterms:creator sto:MuhammadUsman ;
-                         dul:isPartOf sto:EdgeComputing ;
-                         rdfs:comment "Some of the things are highly resource constrained so the current methods for security protection might not be able to be deployed on thing because they are resource hungry. Moreover, the highly dynamic environment at the edge of the network also makes the network become vulnerable or unprotected."@en ;
-                         rdfs:label "Missing Of Efficient Tools"@en .
+                         dul:isPartOf sto:CloudComputing ;
+                         rdfs:comment "Many infrastructure-as-a-service (IaaS) providers make it easy to take advantage of their services. With a valid credit card, users can register and start using cloud services right away"@en ;
+                         rdfs:label "Abuse and Nefarious Use"@en ;
+                         sto:hasDBpediaResource "http://dbpedia.org/page/Abuse"@en ;
+                         sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Abuse"@en .
 
 
-###  https://w3id.org/i40/sto/Extensibility
-:Extensibility rdf:type owl:NamedIndividual ,
+###  https://w3id.org/i40/sto/Account_Hijacking
+:Account_Hijacking rdf:type owl:NamedIndividual ,
+                            sto:Concern ;
+                   dcterms:creator sto:MuhammadUsman ;
+                   dul:isPartOf sto:CloudComputing ;
+                   rdfs:comment "Attacks using methods such as phishing and fraud continue to be an ongoing threat. With stolen credentials, hackers can access critical areas of your cloud and potentially eavesdrop on transactions, manipulate or falsify data, and redirect your clients to illegitimate sites."@en ;
+                   rdfs:label "Account Hijacking"@en ;
+                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Hijacking"@en .
+
+
+###  https://w3id.org/i40/sto/Audit
+:Audit rdf:type owl:NamedIndividual ,
+                sto:Concern ;
+       dcterms:creator sto:MuhammadUsman ;
+       dul:isPartOf sto:AccessPolicy ,
+                    sto:CloudComputing ;
+       rdfs:comment "An audit is a systematic and independent examination of books, accounts, statutory records, documents and vouchers of an organization to ascertain how far the financial statements as well as non-financial disclosures present a true and fair view of the concern."@en ;
+       rdfs:label "Audit"@en ;
+       sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Audit"@en .
+
+
+###  https://w3id.org/i40/sto/Browser_Security
+:Browser_Security rdf:type owl:NamedIndividual ,
+                           sto:Concern ;
+                  dcterms:creator sto:MuhammadUsman ;
+                  dul:isPartOf sto:CloudComputing ;
+                  rdfs:comment """The second issue is Browser Security; a web browser is a platform connected to the cloud server in order a for client to send the request for services on the cloud.
+The user has to gain an authority to be authenticated to use the cloud system. However, web browsers have a security issue that they can’t make XML Signature or
+XML Encryption for applying WS-Security to authenticate the user and protect data from unauthorized users"""@en ;
+                  rdfs:label "Browser Security"@en ;
+                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Browser_security"@en .
+
+
+###  https://w3id.org/i40/sto/Change_Management
+:Change_Management rdf:type owl:NamedIndividual ,
+                            sto:Concern ;
+                   dcterms:creator sto:MuhammadUsman ;
+                   dul:isPartOf sto:CloudComputing ;
+                   rdfs:comment "The cloud computing implementation brings an adjustment in the manner organizations complete their regular duties. The procedure of managing adjustment is then a severe issue of management as it is going to define the successful implementation of Cloud Computing by organizations"@en ;
+                   rdfs:label "Change Management"@en ;
+                   sto:hasDBpediaResource "http://dbpedia.org/page/Change_management"@en ;
+                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Change_management"@en .
+
+
+###  https://w3id.org/i40/sto/Customization
+:Customization rdf:type owl:NamedIndividual ,
                         sto:Concern ;
                dcterms:creator sto:MuhammadUsman ;
-               dul:isPartOf sto:EdgeComputing ;
-               rdfs:comment "\"Extensibility could be a huge challenge at the edge of the network, unlike a mobile system, the things in the IoT could be very dynamic. When the owner purchases a new thing, can it be easily added to the current service without any problem? Or when one thing is replaced due to wearing out, can the previous service adopt a new node easily? These problems should be solved with a flexible and extensible design of service management layer in the edgeOS.\""@en ;
-               rdfs:label "Extensibility"@en ;
-               sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Extensibility"@en .
+               dul:isPartOf sto:CloudComputing ;
+               rdfs:comment "The resources sharing by contrasting users keeps cloud service provider from having the capacity to customize their services to meet the diverse necessities of customers"@en ;
+               rdfs:label "Customization"@en ;
+               sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Customization"@en .
 
 
-###  https://w3id.org/i40/sto/Isolation
-:Isolation rdf:type owl:NamedIndividual ,
+###  https://w3id.org/i40/sto/Data_Breach
+:Data_Breach rdf:type owl:NamedIndividual ,
+                      sto:Concern ;
+             dcterms:creator sto:MuhammadUsman ;
+             dul:isPartOf sto:CloudComputing ;
+             rdfs:comment "A data breach occurs when an unauthorized individual or organization gains access to sensitive, protected, or confidential data."@en ;
+             rdfs:label "Data Breach"@en ;
+             sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_breach"@en .
+
+
+###  https://w3id.org/i40/sto/Data_Location
+:Data_Location rdf:type owl:NamedIndividual ,
+                        sto:Concern ;
+               dcterms:creator sto:MuhammadUsman ;
+               dul:isPartOf sto:CloudComputing ;
+               rdfs:comment "One of the features of cloud computing is geodistribution of data among several servers. But this can be an issue for the enterprise, as the location of the data is unknown to the user."@en ;
+               rdfs:label "Data Location"@en .
+
+
+###  https://w3id.org/i40/sto/Data_Lock-in
+:Data_Lock-in rdf:type owl:NamedIndividual ,
+                       sto:Concern ;
+              dcterms:creator sto:MuhammadUsman ;
+              dul:isPartOf sto:CloudComputing ;
+              rdfs:comment """Another factor that make organizations not very eager to accept Cloud Computing is the fear concerning the data lock-in because of the absence of standards. The apprehension of uncertainty, for example, the cloud service provider leaving the corporate, increasing the cost, as well as the concerns of reliability
+as a consequence of information lock-in likewise causes organizations not do adopt Cloud Computing"""@en ;
+              rdfs:label "Data Lock-in"@en ;
+              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Lock_(computer_science)"@en .
+
+
+###  https://w3id.org/i40/sto/Data_Loss
+:Data_Loss rdf:type owl:NamedIndividual ,
                     sto:Concern ;
            dcterms:creator sto:MuhammadUsman ;
-           dul:isPartOf sto:EdgeComputing ;
-           rdfs:comment "\"Isolation would be another issue at the edge of the network. In mobile OS, if an application fails or crashes, the whole system will usually crash and reboot. Or in a distributed system the shared resource could be managed with different synchronization mechanisms such as a lock or token ring. \""@en ;
-           rdfs:label "Isolation"@en ;
-           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Isolation"@en .
+           dul:isPartOf sto:CloudComputing ;
+           rdfs:comment "Protecting data can be a headache because of the number of ways it can be compromised. Some data customer, employee, or financial data, for example should be protected from unauthorized users"@en ;
+           rdfs:label "Data Loss"@en ;
+           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_loss"@en .
 
 
-###  https://w3id.org/i40/sto/Latency
-:Latency rdf:type owl:NamedIndividual ,
-                  sto:Concern ;
-         dcterms:creator sto:MuhammadUsman ;
-         dul:isPartOf sto:EdgeComputing ,
-                      :Optimization_Matrics ;
-         rdfs:comment "Latency is a time interval between the stimulation and response, or, from a more general point of view, a time delay between the cause and the effect of some physical change in the system being observed."@en ;
-         rdfs:label "Latency"@en ;
-         sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Latency_(engineering)"@en .
+###  https://w3id.org/i40/sto/Data_Segregation
+:Data_Segregation rdf:type owl:NamedIndividual ,
+                           sto:Concern ;
+                  dcterms:creator sto:MuhammadUsman ;
+                  dul:isPartOf sto:CloudComputing ;
+                  rdfs:label "Data Segregation"@en ;
+                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Segregation"@en .
 
 
-###  https://w3id.org/i40/sto/Naming
-:Naming rdf:type owl:NamedIndividual ,
-                 sto:Concern ;
-        dcterms:creator sto:MuhammadUsman ;
-        dul:isPartOf sto:EdgeComputing ;
-        rdfs:comment "At the top of the edge nodes, there are a lot of applications running, and each application has its own structure about how the service is provided. an efficient naming mechanism for the edge computing paradigm has not been built and standardized yet. Edge practitioners usually needs to learn various communication and network protocols in order to communicate with the heterogeneous things in their system. The naming scheme for edge computing needs to handle the mobility of things, highly dynamic network topology, privacy and security protection, as well as the scalability targeting the tremendously large amount of unreliable things."@en ;
-        rdfs:label "Naming"@en ;
-        sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Computer_network_naming_scheme"@en .
+###  https://w3id.org/i40/sto/Data_Separation
+:Data_Separation rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:CloudComputing ;
+                 rdfs:comment "Organizations should know how cloud providers keep data separate for different customers in a multi-tenant Cloud. Also, it should know whether the data is encrypted, how the key are managed and how the encryption is designed, implemented and tested."@en ;
+                 rdfs:label "Data Separation"@en .
 
 
-###  https://w3id.org/i40/sto/Optimization_Matrics
-:Optimization_Matrics rdf:type owl:NamedIndividual ,
-                               sto:Concern ;
-                      dcterms:creator sto:MuhammadUsman ;
-                      dul:isPartOf sto:EdgeComputing ;
-                      rdfs:comment """\"In edge computing, we have multiple layers with different computation capability. Workload allocation becomes a big issue. We need to decide which layer to handle the workload or how many tasks to assign at each part. There are multiple allocation strategies to complete a workload, for instances, evenly distribute the workload on each layer or complete as much as possible on each layer. The extreme cases are fully operated on endpoint or fully operated on cloud. To choose
-an optimal allocation strategy, we discuss several optimization metrics in this section, including latency, bandwidth, energy and cost.\""""@en ;
-                      rdfs:label "Optimization Metrics"@en .
+###  https://w3id.org/i40/sto/Denial_Of_Service
+:Denial_Of_Service rdf:type owl:NamedIndividual ,
+                            sto:Concern ;
+                   dcterms:creator sto:MuhammadUsman ;
+                   dul:isPartOf sto:CloudComputing ;
+                   rdfs:comment "Denial of Service ( DoS ) referred to in the information technology , the unavailability of an Internet service , which was supposed to be available."@en ;
+                   rdfs:label "Denial Of Service"@en ;
+                   sto:hasWikipediaArticle "https://de.wikipedia.org/wiki/Denial_of_Service"@en .
 
 
-###  https://w3id.org/i40/sto/Service_Management
-:Service_Management rdf:type owl:NamedIndividual ,
-                             sto:Concern ;
-                    dcterms:creator sto:MuhammadUsman ;
-                    dul:isPartOf sto:EdgeComputing ;
-                    rdfs:comment "\"In terms of service management at the edge of the network, we argue that the following four fundamental features should be supported to guarantee a reliable system, including differentiation, extensibility, isolation, and reliability.\""@en ;
-                    rdfs:label "Service Management"@en ;
-                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Service_management"@en .
+###  https://w3id.org/i40/sto/Employee_Misuse
+:Employee_Misuse rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:CloudComputing ;
+                 rdfs:comment """It is an insider attack of a cloud. The employees who are working in the cloud environment may involve in data breach activity. These employees may have
+some access rights over the sensitive data stored on the cloud."""@en ;
+                 rdfs:label "Employee Misuse"@en .
+
+
+###  https://w3id.org/i40/sto/Flexibility_of_User_Interface
+:Flexibility_of_User_Interface rdf:type owl:NamedIndividual ,
+                                        sto:Concern ;
+                               dcterms:creator sto:MuhammadUsman ;
+                               dul:isPartOf sto:CloudComputing ;
+                               rdfs:comment "There is no integration between the UI also called User Interface composition frameworks and the Cloud Computing. This impacts the experience of the user which is a critical element in assessing an application before adopting Cloud Computing."@en ;
+                               rdfs:label "Flexibility of User Interface"@en ;
+                               sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/User_interface"@en .
+
+
+###  https://w3id.org/i40/sto/Human_Error
+:Human_Error rdf:type owl:NamedIndividual ,
+                      sto:Concern ;
+             dcterms:creator sto:MuhammadUsman ;
+             dul:isPartOf sto:CloudComputing ;
+             rdfs:comment "Human error is the main cause for security breaches. Human error occurs since the cloud user fail to follow the instructions and guidelines and general carelessness. Such kind of data breaches is called accidental data breaches."@en ;
+             rdfs:label "Human Error"@en ;
+             sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Human_Error"@en .
+
+
+###  https://w3id.org/i40/sto/Implementation
+:Implementation rdf:type owl:NamedIndividual ,
+                         sto:Concern ;
+                dcterms:creator sto:MuhammadUsman ;
+                dul:isPartOf sto:CloudComputing ;
+                rdfs:comment "This is a major challenge for organizations to figure out which information and data ought to be migrated to the cloud server, and which must be still continued on the old system of the organization"@en ;
+                rdfs:label "Implementation"@en ;
+                sto:hasDBpediaResource "http://dbpedia.org/page/Implementation"@en ;
+                sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Implementation"@en .
+
+
+###  https://w3id.org/i40/sto/Insecure_APIs
+:Insecure_APIs rdf:type owl:NamedIndividual ,
+                        sto:Concern ;
+               dcterms:creator sto:MuhammadUsman ;
+               dul:isPartOf sto:CloudComputing ;
+               rdfs:comment """Service provider demonstrates all the APIs that are utilized by the customer to connect with the cloud. Information course of action, personality administration,
+service checking, all happen on the cloud. Validation and get to control is inspected by these interfaces"""@en ;
+               rdfs:label "Insecure APIs"@en ;
+               sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Insecurity"@en .
+
+
+###  https://w3id.org/i40/sto/Insufficient_Supporting_Resources
+:Insufficient_Supporting_Resources rdf:type owl:NamedIndividual ,
+                                            sto:Concern ;
+                                   dcterms:creator sto:MuhammadUsman ;
+                                   dul:isPartOf sto:CloudComputing ;
+                                   rdfs:comment "Knowledge and experiences of the technical engineers and support staffs are essential requirements for organizations to relocate to the cloud storage."@en ;
+                                   rdfs:label "Insufficient Supporting Resources"@en .
+
+
+###  https://w3id.org/i40/sto/Integration
+:Integration rdf:type owl:NamedIndividual ,
+                      sto:Concern ;
+             dcterms:creator sto:MuhammadUsman ;
+             dul:isPartOf sto:CloudComputing ;
+             rdfs:comment "Most organisations are willing to go for the hybrid cloud model so that they can have total control over their data and infrastructure, which are important and sensitive"@en ;
+             rdfs:label "Integration"@en ;
+             sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Integration"@en .
+
+
+###  https://w3id.org/i40/sto/Investigative_Support
+:Investigative_Support rdf:type owl:NamedIndividual ,
+                                sto:Concern ;
+                       dcterms:creator sto:MuhammadUsman ;
+                       dul:isPartOf sto:CloudComputing ;
+                       rdfs:comment "Cloud provider should be prepared to and technically capable of providing end-to-end help for inquest of breaches, problems or illegal access."@en ;
+                       rdfs:label "Investigative Support"@en ;
+                       sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Investigation"@en .
+
+
+###  https://w3id.org/i40/sto/Job_Satisfaction
+:Job_Satisfaction rdf:type owl:NamedIndividual ,
+                           sto:Concern ;
+                  dcterms:creator sto:MuhammadUsman ;
+                  dul:isPartOf sto:CloudComputing ;
+                  rdfs:comment "Cloud service might prompt a reduction in the employment of support care staffs and technical engineers, as well as marketing and advertising staff, since majority of the official job positions are going to be occupied by the cloud computing supplier."@en ;
+                  rdfs:label "Job Satisfaction"@en ;
+                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Job_satisfaction"@en .
+
+
+###  https://w3id.org/i40/sto/Jurisdictional_Issues
+:Jurisdictional_Issues rdf:type owl:NamedIndividual ,
+                                sto:Concern ;
+                       dcterms:creator sto:MuhammadUsman ;
+                       dul:isPartOf sto:CloudComputing ;
+                       rdfs:comment "It is often challenging to alter resources, for example, the server or data centres to a particular geographic area. Load balancing service provider of the cloud, the availability of the network, or the performance of the data centre are few factors that determine where the data is stored. Accordingly, an organization data might be stored in a different location with various legal jurisdictions and diverse laws concerning the security issues, such as the protection and interruptions of the data"@en ;
+                       rdfs:label "Jurisdictional Issues"@en ;
+                       sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Jurisdiction"@en .
+
+
+###  https://w3id.org/i40/sto/Long_Term_Business_Sustainability
+:Long_Term_Business_Sustainability rdf:type owl:NamedIndividual ,
+                                            sto:Concern ;
+                                   dcterms:creator sto:MuhammadUsman ;
+                                   dul:isPartOf sto:CloudComputing ;
+                                   rdfs:comment "The provider should not go broke, be financially in a close-fitting corner or close down the business. Organizations should be sure and know how to move your data to another cloud provider. And should know how to have a backup at another public cloud of data for redundancy"@en ;
+                                   rdfs:label "Long Term Business Sustainability"@en ;
+                                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Sustainability"@en .
+
+
+###  https://w3id.org/i40/sto/Malicious_Attacks
+:Malicious_Attacks rdf:type owl:NamedIndividual ,
+                            sto:Concern ;
+                   dcterms:creator sto:MuhammadUsman ;
+                   dul:isPartOf sto:CloudComputing ;
+                   rdfs:comment """The hackers can attack the system by sending malware or virus to the targeted system. If the targeted system is affected by the malware then the hacker can
+easily penetrate into the system and retrieve all the stored sensitive information such as login credentials, personal information about the user, medical records, financial information etc."""@en ;
+                   rdfs:label "Malicious Attacks"@en ;
+                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Malware"@en .
+
+
+###  https://w3id.org/i40/sto/Migration
+:Migration rdf:type owl:NamedIndividual ,
+                    sto:Concern ;
+           dcterms:creator sto:MuhammadUsman ;
+           dul:isPartOf sto:CloudComputing ;
+           rdfs:comment """organizations still have concern over security and privacy issues in migrating to cloud services. At present information technology management and
+application related to personal use are easily movable application to cloud platform."""@en ;
+           rdfs:label "Migration"@en ;
+           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Migration"@en .
+
+
+###  https://w3id.org/i40/sto/Multitenancy_and_Shared_Technology_Issues
+:Multitenancy_and_Shared_Technology_Issues rdf:type owl:NamedIndividual ,
+                                                    sto:Concern ;
+                                           dcterms:creator sto:MuhammadUsman ;
+                                           dul:isPartOf sto:CloudComputing ;
+                                           rdfs:comment "Clouds deliver scalable services that provide computing power for multiple tenants, whether those tenants are business groups from the same company or independent organizations"@en ;
+                                           rdfs:label "Multitenancy and Shared Technology Issues"@en ;
+                                           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Multitenancy"@en .
+
+
+###  https://w3id.org/i40/sto/Network_Security
+:Network_Security rdf:type owl:NamedIndividual ,
+                           sto:Concern ;
+                  dcterms:creator sto:MuhammadUsman ;
+                  dul:isPartOf sto:CloudComputing ;
+                  rdfs:comment """Data flow is an integral part of any cloud service over the network of computers or
+clusters of systems using internet. Any intruder can analyze the data packet to detect any weakness in the system and can gain access to applications and data
+using some kind of remote access mechanism and injection like SQL and some bad command, Denial of Service (DoS), Distributed DoS (DDoS), man in the
+middle attacks, social networking attacks and some unauthorized attacks are the major entrance level attacks in cloud computing environment."""@en ;
+                  rdfs:label "Network Security"@en ;
+                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Network_security"@en .
+
+
+###  https://w3id.org/i40/sto/Performance
+:Performance rdf:type owl:NamedIndividual ,
+                      sto:Concern ;
+             dcterms:creator sto:MuhammadUsman ;
+             dul:isPartOf sto:CloudComputing ;
+             rdfs:comment "Performance is completion of a task with application of knowledge, skills and abilities"@en ;
+             rdfs:label "Performance"@en ;
+             sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Performance"@en .
+
+
+###  https://w3id.org/i40/sto/Regulatory_Compliance
+:Regulatory_Compliance rdf:type owl:NamedIndividual ,
+                                sto:Concern ;
+                       dcterms:creator sto:MuhammadUsman ;
+                       dul:isPartOf sto:CloudComputing ;
+                       rdfs:comment "Organizations are ultimately legally respon-sible for their process compliance and data security, Even though the data is in a public cloud."@en ;
+                       rdfs:label "Regulatory Compliance"@en ;
+                       sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Regulatory_compliance"@en .
+
+
+###  https://w3id.org/i40/sto/Reliance_on_the_Internet
+:Reliance_on_the_Internet rdf:type owl:NamedIndividual ,
+                                   sto:Concern ;
+                          dcterms:creator sto:MuhammadUsman ;
+                          dul:isPartOf sto:CloudComputing ;
+                          rdfs:comment """Reliance of cloud computing on the internet is a significant issue of organizations in light of the fact that with any issue with the internet, cloud services will also be influenced. Cloud computing relies on the internet to properly function. Any disruption of internet connection automatically stop the cloud computing
+services."""@en ;
+                          rdfs:label "Reliance on the Internet"@en .
+
+
+###  https://w3id.org/i40/sto/Reputation_Fate_Sharing
+:Reputation_Fate_Sharing rdf:type owl:NamedIndividual ,
+                                  sto:Concern ;
+                         dcterms:creator sto:MuhammadUsman ;
+                         dul:isPartOf sto:CloudComputing ;
+                         rdfs:comment "This issue emerges if an organization shares the similar resources with different organizations with terrible reputation. This problem affects other organizations, too"@en ;
+                         rdfs:label "Reputation Fate Sharing"@en ;
+                         sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Fate-sharing"@en .
+
+
+###  https://w3id.org/i40/sto/Risk_Management
+:Risk_Management rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:CloudComputing ;
+                 rdfs:comment """To end with, organizations will be generally exposed to a broad range of different risks, by adopting the cloud computing. Managing these risks is very important concern, as the successful implementation of cloud computing relies upon the appropriate managing, reducing, as well as mitigating these risks linked to
+cloud computing"""@en ;
+                 rdfs:label "Risk Management"@en ;
+                 sto:hasDBpediaResource "http://dbpedia.org/page/Risk_management"@en ;
+                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Risk_management"@en .
+
+
+###  https://w3id.org/i40/sto/Secure_Data_Transmission
+:Secure_Data_Transmission rdf:type owl:NamedIndividual ,
+                                   sto:Concern ;
+                          dcterms:creator sto:MuhammadUsman ;
+                          dul:isPartOf sto:CloudComputing ;
+                          rdfs:comment "In computer science, secure transmission refers to the transfer of data such as confidential or proprietary information over a secure channel."@en ;
+                          rdfs:label "Secure Data Transmission"@en ;
+                          sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Secure_transmission"@en .
+
+
+###  https://w3id.org/i40/sto/Selection_of_Service_Provider
+:Selection_of_Service_Provider rdf:type owl:NamedIndividual ,
+                                        sto:Concern ;
+                               dcterms:creator sto:MuhammadUsman ;
+                               dul:isPartOf sto:CloudComputing ;
+                               rdfs:comment """Due to the diversity of cloud computing service suppliers, it is a challenge for organizations to pick am appropriate service supplier. In selection of a cloud provider, organizations ought to look at different elements, like the reputation and size of the company of service supplier, in terms of number of employees,
+share of the market, as well as their other resources"""@en ;
+                               rdfs:label "Selection of Service Provider"@en ;
+                               sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Service_provider"@en .
+
+
+###  https://w3id.org/i40/sto/Service_Recovery
+:Service_Recovery rdf:type owl:NamedIndividual ,
+                           sto:Concern ;
+                  dcterms:creator sto:MuhammadUsman ;
+                  dul:isPartOf sto:CloudComputing ;
+                  rdfs:comment "Organizations should make sure that the cloud provider imitates the data and provides services in case the major site is down. Find out the time to restore services and the data loss if any, in case the chief site goes down."@en ;
+                  rdfs:label "Service Recovery"@en ;
+                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Service_recovery"@en .
+
+
+###  https://w3id.org/i40/sto/Standard_Service_Level_Agreement
+:Standard_Service_Level_Agreement rdf:type owl:NamedIndividual ,
+                                           sto:Concern ;
+                                  dcterms:creator sto:MuhammadUsman ;
+                                  dul:isPartOf sto:CloudComputing ;
+                                  rdfs:comment """There are many sorts of service level agreements (SLA) among Cloud Computing providers due to the diverse meanings of resources of Cloud Computing. These resources are normally defined across diverse unstandardized resources, like the
+implementation time, the inbound and outbound bandwidth, the central processing unit (CPU) centres, and the type of processor"""@en ;
+                                  rdfs:label "Standard Service Level Agreement"@en ;
+                                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Service-level_agreement"@en .
+
+
+###  https://w3id.org/i40/sto/Strategy
+:Strategy rdf:type owl:NamedIndividual ,
+                   sto:Concern ;
+          dcterms:creator sto:MuhammadUsman ;
+          dul:isPartOf sto:CloudComputing ;
+          rdfs:comment "Introducing cloud computing is going to cause a change in the structure of information technology departments of organizations"@en ;
+          rdfs:label "Strategy"@en ;
+          sto:hasDBpediaResource "http://dbpedia.org/page/Strategy"@en ;
+          sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Strategy"@en .
+
+
+###  https://w3id.org/i40/sto/System_Glitches
+:System_Glitches rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:CloudComputing ;
+                 rdfs:comment """The breach due to system problems or failures is called system glitches. System glitches can cause the stored data to be corrupted or destroyed. Authentication
+failures and data recovery failures are also due to system glitches."""@en ;
+                 rdfs:label "System Glitches"@en ;
+                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Glitch"@en .
+
+
+###  https://w3id.org/i40/sto/Technology_Bottleneck
+:Technology_Bottleneck rdf:type owl:NamedIndividual ,
+                                sto:Concern ;
+                       dcterms:creator sto:MuhammadUsman ;
+                       dul:isPartOf sto:CloudComputing ;
+                       rdfs:comment "Organizations that adopt cloud computing have to redesign their present technology into new structures of information to have the ability to care dynamic and huge quantities of information, new filing system, as well as storage technologies"@en ;
+                       rdfs:label "Technology Bottleneck"@en ;
+                       sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Bottleneck_(software)"@en .
+
+
+###  https://w3id.org/i40/sto/Vendor_Lockin
+:Vendor_Lockin rdf:type owl:NamedIndividual ,
+                        sto:Concern ;
+               dcterms:creator sto:MuhammadUsman ;
+               dul:isPartOf sto:CloudComputing ;
+               rdfs:comment """There is a lot of competition among vendors to dominate the cloud market. According to Columbus’ report, a study conducted by IDG Cloud Computing
+Study realized that Cloud investment rose by 19% in larger scale enterprises consisting of more than a thousand employees who spend a mean of $3.3 million
+annually."""@en ;
+               rdfs:label "Vendor Lockin"@en ;
+               sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Vendor_lock-in"@en .
 
 
 ###  https://w3id.org/ids/core/TrustedConnector
@@ -14903,8 +15372,8 @@ iira:CrosscuttingFunction rdfs:comment "Often these enabling functions, the so-c
 
 dc11:description dcterms:description "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en ;
                  rdfs:isDefinedBy dc11: ;
-                 dcterms:issued "1999-07-02"^^xsd:date ;
                  skos:note "A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document \"DCMI Metadata Terms\" (http://dublincore.org/documents/dcmi-terms/) for an explanation."@en ;
+                 dcterms:issued "1999-07-02"^^xsd:date ;
                  rdfs:comment "An account of the resource."@en ;
                  dcterms:modified "2008-01-14"^^xsd:date ;
                  rdfs:label "Description"@en ;
@@ -14939,11 +15408,11 @@ sto:AoutonomousCommunication rdfs:seeAlso "IoT-A Requirement UNI.247" .
 
 
 sto:BdvaConcern dcterms:creator "sebastian" ;
+                rdfs:label "BDVA Concern"@en ;
                 rdfs:comment """The BDV Reference Model distinguishes between two different elements. On the one hand, it describes the elements that are at the core of the BDVA; on the other, it outlines the features that are developed in strong collaboration with related European activities. The BDV Reference Model is structured into horizontal and vertical concerns.
 Horizontal concerns cover specific aspects along the data processing
 Vertical concerns address cross-cutting issues, which may affect all the horizontal concerns. In addition, vertical concerns may also involve non-technical aspects."""@en ;
                 sto:hasOfficialResource <http://www.bdva.eu/sites/default/files/BDVA_SRIA_v4_Ed1.1.pdf> ;
-                rdfs:label "BDVA Concern"@en ;
                 rdfs:comment "The BDV Reference Model distinguishes between two different elements. On the one hand, it describes the elements that are at the core of the BDVA; on the other, it outlines the features that are developed in strong collaboration with related European activities. The BDV Reference Model is structured into horizontal and vertical concerns. Horizontal concerns cover specific aspects along the data processing Vertical concerns address cross-cutting issues, which may affect all the horizontal concerns. In addition, vertical concerns may also involve non-technical aspects."@en ;
                 dcterms:creator "sebastian"@en .
 
@@ -14974,8 +15443,8 @@ sto:GeospatialQuery rdfs:seeAlso "IoT-A Requirement UNI.401" .
 
 
 sto:InternationalClassificationForStandards rdfs:seeAlso <https://www.iso.org/publication/PUB100033.html> ;
-                                            rdfs:label "International Classification For Standards"@en ;
                                             sto:hasOfficialResource <https://www.iso.org/publication/PUB100033.html> ;
+                                            rdfs:label "International Classification For Standards"@en ;
                                             rdfs:comment "Serves as a structure for catalogues of international, regional and national standards and other normative documents, and as a basis for standing-order systems."@en .
 
 
@@ -14998,8 +15467,8 @@ sto:ServiceLevelAgreements rdfs:seeAlso "IoT-A Requirement UNI.060" .
 
 
 sto:Standard rdfs:label "Standard"@en ;
-             rdfs:comment "A document, established by consensus and approved by a recognized body, that provides, for common and repeated use, rules, guidelines or characteristics for activities or their results, aimed at the achievement of the optimum degree of order in a given context."@en ;
              cc:attributionURL <http://www.iec.ch> ;
+             rdfs:comment "A document, established by consensus and approved by a recognized body, that provides, for common and repeated use, rules, guidelines or characteristics for activities or their results, aimed at the achievement of the optimum degree of order in a given context."@en ;
              rdfs:isDefinedBy sto:IEC ;
              rdfs:seeAlso <http://www.iec.ch/standardsdev/publications/is.htm> .
 
@@ -15029,14 +15498,14 @@ sto:TechnicalCommittee skos:note "1.sto:       a property explaining that TC and
 sto:TechnicalReport cc:attributionURL "http://www.iec.ch"^^xsd:string ;
                     rdfs:isDefinedBy sto:IEC ;
                     rdfs:comment "Technical Reports contain collected data of a kind different from that normally published as an International Standard, for example data obtained from a survey carried out among national committees, data of work in other international organizations or data on \"the state of the art\" in relation to standards of national committees on a particular subject.Technical Reports are entirely informative in nature and shall not contain matter implying that they are normative"@en ;
-                    rdfs:label "Technical Report"@en ;
                     rdfs:seeAlso <http://www.iec.ch/standardsdev/publications/tr.htm> ;
+                    rdfs:label "Technical Report"@en ;
                     rdfs:comment "Specifies that a given Publication is a Technical Report"@en .
 
 
-sto:TechnicalSpecification rdfs:comment "Technical Specifications are often published when the subject under question is still under development or when insufficient consensus for approval of an International Standard is available.Technical Specifications approach International Standards in terms of detail and completeness, but have not yet passed through all approval stages either because consensus has not been reached or because standardization is seen to be premature."@en ,
-                                        "Specifies that a given Publication is a Technical Specification"@en ;
+sto:TechnicalSpecification rdfs:comment "Specifies that a given Publication is a Technical Specification"@en ;
                            rdfs:label "Technical Specification"@en ;
+                           rdfs:comment "Technical Specifications are often published when the subject under question is still under development or when insufficient consensus for approval of an International Standard is available.Technical Specifications approach International Standards in terms of detail and completeness, but have not yet passed through all approval stages either because consensus has not been reached or because standardization is seen to be premature."@en ;
                            cc:attributionURL <http://www.iec.ch> ;
                            rdfs:isDefinedBy sto:IEC ;
                            rdfs:seeAlso <http://www.iec.ch/standardsdev/publications/ts.htm> .
@@ -15048,8 +15517,8 @@ sto:Technology rdfs:label "Technology"@en ;
 
 
 sto:Viewpoint rdfs:comment "ISO 42010 definition of a Viewpoint"@en ;
-              sto:hasDBpediaResource <http://dbpedia.org/resource/ISO/IEC_42010> ;
               rdfs:seeAlso <https://www.iso.org/standard/50508.html> ;
+              sto:hasDBpediaResource <http://dbpedia.org/resource/ISO/IEC_42010> ;
               dcterms:creator "sebastian" ;
               sto:hasWikipediaArticle <https://en.wikipedia.org/wiki/ISO/IEC_42010#Conceptual_Model_-_Architecture_Viewpoint> ;
               sto:hasOfficialResource <http://www.iso-architecture.org/42010/> ;
