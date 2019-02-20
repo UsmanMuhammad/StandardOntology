@@ -1729,7 +1729,8 @@ rami:EnergyEfficiency rdf:type owl:NamedIndividual ,
                                rami:AdminShellSubmodel ,
                                sto:Concern ,
                                sto:StandardClassification ;
-                      dul:isPartOf sto:CloudComputing ;
+                      dul:isPartOf sto:CloudComputing ,
+                                   sto:IoT ;
                       sto:isDescribedin sto:AdministrationShell ;
                       rdfs:comment "Efficient energy use, sometimes simply called energy efficiency, is the goal to reduce the amount of energy required to provide products and services."@en ;
                       rdfs:label "Energy Efficiency"@en ;
@@ -2129,7 +2130,8 @@ sto:AccessPolicy rdf:type owl:NamedIndividual ,
                           sto:Concern ;
                  dcterms:creator sto:sebastian ;
                  dul:isPartOf sto:CloudComputing ,
-                              sto:DataAccessControl ;
+                              sto:DataAccessControl ,
+                              sto:IoT ;
                  rdfs:comment "Access to the service shall be regulated by access policies. Users entitled in access policies to envoke a given service must be able to actually envoke it."@en ;
                  rdfs:label "Access Policy"@en ;
                  rdfs:seeAlso "IoT-A Requirement UNI.604" .
@@ -2236,7 +2238,9 @@ sto:Authentication rdf:type owl:NamedIndividual ,
                    dcterms:creator sto:sebastian ;
                    dul:isPartOf sto:CloudComputing ,
                                 sto:EdgeComputing ,
-                                sto:Security ;
+                                sto:IoT ,
+                                sto:Security ,
+                                :Cloud_Connectivity ;
                    rdfs:comment "Authentication before opening a valid connection; this can be done by just verifying the server identity or doing mutual authentication."@en ;
                    rdfs:label "Authentication"@en ;
                    rdfs:seeAlso "IoT-A Requirement UNI.612" ,
@@ -2248,8 +2252,10 @@ sto:Authorization rdf:type owl:NamedIndividual ,
                            sto:Concern ;
                   dul:isPartOf sto:CloudComputing ,
                                sto:EdgeComputing ,
+                               sto:IoT ,
                                sto:Privacy ,
-                               sto:Security ;
+                               sto:Security ,
+                               :Cloud_Connectivity ;
                   rdfs:seeAlso "IoT-A Requirement UNI.319" ,
                                "IoT-A Requirement UNI.502" ,
                                "IoT-A Requirement UNI.503" .
@@ -2303,6 +2309,7 @@ sto:Availability rdf:type owl:NamedIndividual ,
                  dcterms:creator sto:sebastian ;
                  dul:isPartOf sto:CloudComputing ,
                               sto:EdgeComputing ,
+                              sto:IoT ,
                               sto:Security ;
                  rdfs:comment "In reliability theory and reliability engineering, the term availability has the following meanings: * The degree to which a system, subsystem or equipment is in a specified operable and committable state at the start of a mission, when the mission is called for at an unknown, i.e. a random, time. Simply put, availability is the proportion of time a system is in a functioning condition. This is often described as a mission capable rate. Mathematically, this is expressed as 100% minus unavailability. * The ratio of (a) the total time a functional unit is capable of being used during a given interval to (b) the length of the interval. For example, a unit that is capable of being used 100 hours per week (168 hours) would have an availability of 100/168. However, typical availability values are specified in decimal (such as 0.9998). In high availability applications, a metric known as nines, corresponding to the number of nines following the decimal point, is used. With this convention, \"five nines\" equals 0.99999 (or 99.999%) availability. (source: wikipedia)"@en ;
                  rdfs:label "Availability"@en ;
@@ -2429,6 +2436,7 @@ sto:Bandwidth rdf:type owl:NamedIndividual ,
                        sto:Concern ;
               dcterms:creator sto:MuhammadUsman ;
               dul:isPartOf sto:EdgeComputing ,
+                           sto:IoT ,
                            sto:Optimization_Matrics ;
               rdfs:comment "In computing, bandwidth is the maximum rate of data transfer across a given path. Bandwidth may be characterized as network bandwidth, data bandwidth, or digital bandwidth."@en ;
               rdfs:label "Bandwidth"@en ;
@@ -3499,7 +3507,8 @@ sto:Data_Confidentiality rdf:type owl:NamedIndividual ,
                                   sto:Concern ;
                          dcterms:creator sto:MuhammadUsman ;
                          dul:isPartOf sto:CloudComputing ,
-                                      sto:EdgeComputing ;
+                                      sto:EdgeComputing ,
+                                      sto:IoT ;
                          rdfs:label "Data Confidentiality"@en .
 
 
@@ -3528,7 +3537,8 @@ sto:Data_Integrity rdf:type owl:NamedIndividual ,
                             sto:Concern ;
                    dcterms:creator sto:MuhammadUsman ;
                    dul:isPartOf sto:CloudComputing ,
-                                sto:EdgeComputing ;
+                                sto:EdgeComputing ,
+                                sto:IoT ;
                    rdfs:comment "Data integrity is the maintenance of, and the assurance of the accuracy and consistency of, data over its entire life-cycle, and is a critical aspect to the design, implementation and usage of any system which stores, processes, or retrieves data."@en ;
                    rdfs:label "Data Integrity"@en ;
                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_integrity"@en .
@@ -4137,7 +4147,8 @@ sto:Fairness rdf:type owl:NamedIndividual ,
 sto:Fault_Tolerance rdf:type owl:NamedIndividual ,
                              sto:Concern ;
                     dcterms:creator sto:MuhammadUsman ;
-                    dul:isPartOf sto:CloudComputing ;
+                    dul:isPartOf sto:CloudComputing ,
+                                 sto:IoT ;
                     rdfs:comment "Fault tolerance is the property that enables a system to continue operating properly in the event of the failure of some (one or more faults within) of its components. If its operating quality decreases at all, the decrease is proportional to the severity of the failure, as compared to a naively designed system in which even a small failure can cause total breakdown."@en ;
                     rdfs:label "Fault Tolerance"@en ;
                     sto:hasDBpediaResource "http://dbpedia.org/page/Category:Fault-tolerant_computer_systems"@en ;
@@ -11094,7 +11105,8 @@ sto:InternationalClassificationForStandards rdf:type owl:NamedIndividual ,
 sto:Interoperability rdf:type owl:NamedIndividual ,
                               sto:Concern ;
                      dul:isPartOf sto:CloudComputing ,
-                                  sto:EdgeComputing ;
+                                  sto:EdgeComputing ,
+                                  sto:IoT ;
                      <http://voag.linkedmodel.org/voag#hasStakeholder> <https://w3id.org/i40/GeneralMAnager> ,
                                                                        <https://www.wikidata.org/wiki/Q1548249> ;
                      rdfs:comment "A systems ability to connect with other systems."@en ,
@@ -11768,7 +11780,8 @@ sto:Mihini rdf:type owl:NamedIndividual ,
 sto:Mobility rdf:type owl:NamedIndividual ,
                       sto:Concern ;
              dcterms:creator sto:MuhammadUsman ;
-             dul:isPartOf sto:EdgeComputing ;
+             dul:isPartOf sto:EdgeComputing ,
+                          sto:IoT ;
              rdfs:comment """How to handle the massive mobility of vehicles? In the case of an application scenario that involves connected vehicles, mobility is a major issue and includes data consumer as well as data producer. In this particular case, one of the influencing factors is the potential speed of a vehicle. High-speed mobility may
 lead to situations in which a request for data or a service may not be answered before the vehicle disconnects and re-connects to another network entry point. This leads to unfulfilled requests and potential duplication of efforts."""@en ;
              rdfs:label "Mobility"@en ;
@@ -12017,7 +12030,8 @@ sto:NIST_800-146 rdf:type owl:NamedIndividual ,
 sto:Naming rdf:type owl:NamedIndividual ,
                     sto:Concern ;
            dcterms:creator sto:MuhammadUsman ;
-           dul:isPartOf sto:EdgeComputing ;
+           dul:isPartOf sto:EdgeComputing ,
+                        sto:IoT ;
            rdfs:comment "At the top of the edge nodes, there are a lot of applications running, and each application has its own structure about how the service is provided. an efficient naming mechanism for the edge computing paradigm has not been built and standardized yet. Edge practitioners usually needs to learn various communication and network protocols in order to communicate with the heterogeneous things in their system. The naming scheme for edge computing needs to handle the mobility of things, highly dynamic network topology, privacy and security protection, as well as the scalability targeting the tremendously large amount of unreliable things."@en ;
            rdfs:label "Naming"@en ;
            sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Computer_network_naming_scheme"@en .
@@ -12170,7 +12184,8 @@ sto:NgsiLdInformationModel rdf:type owl:NamedIndividual ,
 sto:NonRepudiation rdf:type owl:NamedIndividual ,
                             sto:Concern ;
                    dcterms:creator sto:sebastian ;
-                   dul:isPartOf sto:IntegrityProtection ;
+                   dul:isPartOf sto:IntegrityProtection ,
+                                sto:IoT ;
                    rdfs:comment "In digital security, non-repudiation means:  (a)  A service that provides proof of the integrity and origin of data. (b) An authentication that can be said to be genuine with high confidence. The most common method of verifying the digital origin of data is through digital certificates, a form of public key infrastructure that includes digital signatures."@en ;
                    rdfs:label "Non-repudiation"@en ;
                    rdfs:seeAlso "IoT-A Requirement UNI.619" ;
@@ -12512,6 +12527,7 @@ sto:Privacy rdf:type owl:NamedIndividual ,
             dul:isPartOf sto:CloudComputing ,
                          sto:DataSovereignty ,
                          sto:EdgeComputing ,
+                         sto:IoT ,
                          sto:Trustworthiness ;
             rdfs:comment "Information privacy, or data privacy (or data protection), is the relationship between collection and dissemination of data, technology, the public expectation of privacy, and the legal and political issues surrounding them. Privacy concerns exist wherever personally identifiable information or other sensitive information is collected, stored, used, and finally destroyed or deleted – in digital form or otherwise. Improper or non-existent disclosure control can be the root cause for privacy issues. Data privacy issues can arise in response to information from a wide range of sources, such as: * Healthcare records * Criminal justice investigations and proceedings * Financial institutions and transactions * Biological traits, such as genetic material * Residence and geographic records * Ethnicity * Privacy breach * Location-based service and geolocation * Web surfing behavior or user preferences using persistent cookies. (source: wikipedia)"@en ;
             rdfs:label "Privacy"@en ;
@@ -12663,6 +12679,7 @@ sto:QUIC rdf:type owl:NamedIndividual ,
 sto:QualityOfService rdf:type owl:NamedIndividual ,
                               sto:Concern ;
                      dul:isPartOf sto:EdgeComputing ,
+                                  sto:IoT ,
                                   sto:ServiceDescription ;
                      rdfs:comment "Quality of service (QoS) is the overall performance of a telephony or computer network, particularly the performance seen by the users of the network. To quantitatively measure quality of service, several related aspects of the network service are often considered, such as error rates, bit rate, throughput, transmission delay, availability, jitter, etc. In the field of computer networking and other packet-switched telecommunication networks, quality of service refers to traffic prioritization and resource reservation control mechanisms rather than the achieved service quality. (source: wikipedia)"@en ;
                      rdfs:label "Quality of Service"@en ;
@@ -13035,7 +13052,9 @@ sto:Reliability rdf:type owl:NamedIndividual ,
                          sto:Concern ;
                 dcterms:creator sto:sebastian ;
                 dul:isPartOf sto:EdgeComputing ,
-                             sto:Trustworthiness ;
+                             sto:IoT ,
+                             sto:Trustworthiness ,
+                             <https://w3id.org/i40/sto/Internet_of_Things_(IOT)> ;
                 rdfs:comment "In computer networking, a reliable protocol provides reliability properties with respect to the delivery of data to the intended recipient(s), as opposed to an unreliable protocol, which does not provide notifications to the sender as to the delivery of transmitted data. (source: wikipedia)"@en ;
                 rdfs:label "Reliability"@en ;
                 rdfs:seeAlso "IoT-A Requirement UNI.065" ;
@@ -13046,7 +13065,8 @@ sto:Reliability rdf:type owl:NamedIndividual ,
 sto:Resilience rdf:type owl:NamedIndividual ,
                         sto:Concern ;
                dcterms:creator sto:sebastian ;
-               dul:isPartOf sto:Trustworthiness ;
+               dul:isPartOf sto:IoT ,
+                            sto:Trustworthiness ;
                <http://voag.linkedmodel.org/voag#hasStakeholder> <http://dbpedia.org/ontology/generalManager> ,
                                                                  <https://www.wikidata.org/wiki/Q1548249> ;
                rdfs:comment "Resilience is the ability to provide and maintain an acceptable level of service in the face of faults and challenges to normal operation.” Threats and challenges for services can range from simple misconfiguration over large scale natural disasters to targeted attacks. As such, network resilience touches a very wide range of topics. In order to increase the resilience of a given communication network, the probable challenges and risks have to be identified and appropriate resilience metrics have to be defined for the service to be protected. (source: wikipedia)"@en ;
@@ -13228,7 +13248,9 @@ sto:Safety rdf:type owl:NamedIndividual ,
 sto:Scalability rdf:type owl:NamedIndividual ,
                          sto:Concern ;
                 dcterms:creator sto:sebastian ;
-                dul:isPartOf sto:EdgeComputing ;
+                dul:isPartOf sto:EdgeComputing ,
+                             sto:IoT ,
+                             <https://w3id.org/i40/sto/Internet_of_Things_(IOT)> ;
                 rdfs:comment "Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged in order to accommodate that growth. For example, it can refer to the capability of a system to increase its total output under an increased load when resources (typically hardware) are added. An analogous meaning is implied when the word is used in an economic context, where scalability of a company implies that the underlying business model offers the potential for economic growth within the company. Scalability, as a property of systems, is generally difficult to define and in any particular case it is necessary to define the specific requirements for scalability on those dimensions that are deemed important. It is a highly significant issue in electronics systems, databases, routers, and networking. (source: wikipedia)"@en ;
                 rdfs:label "Scalability"@en ;
                 rdfs:seeAlso "IoT-A Requirement UNI.026" ,
@@ -13243,7 +13265,9 @@ sto:SecureCommunication rdf:type owl:NamedIndividual ,
                                  sto:Concern ;
                         dcterms:creator sto:sebastian ;
                         dul:isPartOf sto:Communication ,
-                                     sto:Security ;
+                                     sto:IoT ,
+                                     sto:Security ,
+                                     :Cloud_Connectivity ;
                         <http://voag.linkedmodel.org/voag#hasStakeholder> <http://dbpedia.org/ontology/developer> ,
                                                                           <http://purl.oclc.org/NET/mvco.owl#EndUser> ,
                                                                           <https://w3id.org/i40/SystemArchitect> ;
@@ -13272,7 +13296,8 @@ sto:Security rdf:type owl:NamedIndividual ,
              dcterms:creator sto:sebastian ;
              dul:isPartOf sto:CloudComputing ,
                           sto:EdgeComputing ,
-                          sto:Trustworthiness ;
+                          sto:Trustworthiness ,
+                          <https://w3id.org/i40/sto/Internet_of_Things_(IOT)> ;
              <http://voag.linkedmodel.org/voag#hasStakeholder> <http://dbpedia.org/ontology/generalManager> ,
                                                                <https://www.wikidata.org/wiki/Q1548249> ;
              rdfs:comment "Information security, sometimes shortened to InfoSec, is the practice of defending information from unauthorized access, use, disclosure, disruption, modification, inspection, recording or destruction. It is a general term that can be used regardless of the form the data may take (e.g. electronic, physical). (source: wikipedia)"@en ;
@@ -13906,6 +13931,8 @@ sto:TrustedConnector rdf:type owl:NamedIndividual ,
 sto:Trustworthiness rdf:type owl:NamedIndividual ,
                              sto:Concern ;
                     dcterms:creator sto:sebastian ;
+                    dul:isPartOf sto:EdgeComputing ,
+                                 sto:IoT ;
                     rdfs:comment "Trustworthiness is the degree of confidence one has that the system performs as expected in respect to all the key system characteristics in the face of environmental disruptions, human errors, system faults and attacks. source: IISF"@en ;
                     rdfs:label "Trustworthiness"@en ;
                     rdfs:seeAlso "IoT-A Requirement UNI.062" ,
@@ -14693,6 +14720,16 @@ sto:xTee rdf:type owl:NamedIndividual ,
                          sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Abuse"@en .
 
 
+###  https://w3id.org/i40/sto/Access_Rights_for_IoT-Cloud
+:Access_Rights_for_IoT-Cloud rdf:type owl:NamedIndividual ,
+                                      sto:Concern ;
+                             dcterms:creator sto:MuhammadUsman ;
+                             dul:isPartOf sto:IoT ,
+                                          :Cloud_Connectivity ;
+                             rdfs:label "Access Rights for IoT-Cloud"@en ;
+                             sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Access_rights"@en .
+
+
 ###  https://w3id.org/i40/sto/Account_Hijacking
 :Account_Hijacking rdf:type owl:NamedIndividual ,
                             sto:Concern ;
@@ -14701,6 +14738,37 @@ sto:xTee rdf:type owl:NamedIndividual ,
                    rdfs:comment "Attacks using methods such as phishing and fraud continue to be an ongoing threat. With stolen credentials, hackers can access critical areas of your cloud and potentially eavesdrop on transactions, manipulate or falsify data, and redirect your clients to illegitimate sites."@en ;
                    rdfs:label "Account Hijacking"@en ;
                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Hijacking"@en .
+
+
+###  https://w3id.org/i40/sto/Adaptability
+:Adaptability rdf:type owl:NamedIndividual ,
+                       sto:Concern ;
+              dcterms:creator sto:MuhammadUsman ;
+              dul:isPartOf sto:IoT ;
+              rdfs:comment """Because of clients' need and time's requirements, there ought to be constant change in the system of associated devices for Internet of Things. Adaptability is
+continuously a need for survival and development of Internet of Things."""@en ;
+              rdfs:label "Adaptability"@en ;
+              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Adaptability"@en .
+
+
+###  https://w3id.org/i40/sto/Advocating_the_Protocols
+:Advocating_the_Protocols rdf:type owl:NamedIndividual ,
+                                   sto:Concern ;
+                          dcterms:creator sto:MuhammadUsman ;
+                          dul:isPartOf sto:IoT ;
+                          rdfs:comment """Different protocols are yet to be used to connect different things over the internet. Depending on the utilization of sensors in a gateway, some of the protocols are advocated by a gateway device and some of the protocols do not advocate.
+Most of the users prefer the sensors which are easily available."""@en ;
+                          rdfs:label "Advocating the Protocols"@en .
+
+
+###  https://w3id.org/i40/sto/Assimilation_of_Devices_at_Runtime
+:Assimilation_of_Devices_at_Runtime rdf:type owl:NamedIndividual ,
+                                             sto:Concern ;
+                                    dcterms:creator sto:MuhammadUsman ;
+                                    dul:isPartOf sto:IoT ;
+                                    rdfs:comment "This issue logically configures and consolidates different resources of the physical space."@en ;
+                                    rdfs:label "Assimilation of Devices at Runtime"@en ;
+                                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Assimilation"@en .
 
 
 ###  https://w3id.org/i40/sto/Audit
@@ -14726,6 +14794,18 @@ XML Encryption for applying WS-Security to authenticate the user and protect dat
                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Browser_security"@en .
 
 
+###  https://w3id.org/i40/sto/Bulk_Data
+:Bulk_Data rdf:type owl:NamedIndividual ,
+                    sto:Concern ;
+           dcterms:creator sto:MuhammadUsman ;
+           dul:isPartOf sto:IoT ;
+           rdfs:comment """Data is the essential factor in Internet of Things. IoT associates different machines with cloud server farms, in the cloud all devices are associated with cloud
+models and stores and recover a huge amount of information and data to cloud data centers."""@en ;
+           rdfs:label "Bulk Data"@en ;
+           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Bulk"@en ,
+                                   "https://en.wikipedia.org/wiki/Data"@en .
+
+
 ###  https://w3id.org/i40/sto/Change_Management
 :Change_Management rdf:type owl:NamedIndividual ,
                             sto:Concern ;
@@ -14735,6 +14815,40 @@ XML Encryption for applying WS-Security to authenticate the user and protect dat
                    rdfs:label "Change Management"@en ;
                    sto:hasDBpediaResource "http://dbpedia.org/page/Change_management"@en ;
                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Change_management"@en .
+
+
+###  https://w3id.org/i40/sto/Cloud_Connectivity
+:Cloud_Connectivity rdf:type owl:NamedIndividual ,
+                             sto:Concern ;
+                    dcterms:creator sto:MuhammadUsman ;
+                    dul:isPartOf sto:IoT ;
+                    rdfs:comment "Internet of Things is used in number of technical contexts such as wireless (radio) networks, sensor networks, machineto machine (M2M) interactions, human/environmental and technical interactions, and so forth"@en ;
+                    rdfs:label "Cloud Connectivity"@en ;
+                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Cloud_communications"@en .
+
+
+###  https://w3id.org/i40/sto/Complexity
+:Complexity rdf:type owl:NamedIndividual ,
+                     sto:Concern ;
+            dcterms:creator sto:MuhammadUsman ;
+            dul:isPartOf sto:IoT ;
+            rdfs:comment """Internet of Things incorporates the combination of hardware layer, programming layer, and other framework designs to get administrations of associated
+devices. All related devices may have distinctive standard and working protocols and hard to deal with this heterogeneous engineering in IoT"""@en ;
+            rdfs:label "Complexity"@en ;
+            sto:hasDBpediaResource "http://dbpedia.org/page/Complexity"@en ;
+            sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Complexity"@en .
+
+
+###  https://w3id.org/i40/sto/Connectivity
+:Connectivity rdf:type owl:NamedIndividual ,
+                       sto:Concern ;
+              dcterms:creator sto:MuhammadUsman ;
+              dul:isPartOf sto:IoT ;
+              rdfs:comment """Internet of Things associates various smart devices through the Internet, and it gives a facility to concentrated checking and control of associated
+equipment."""@en ;
+              rdfs:label "Connectivity"@en ;
+              sto:hasDBpediaResource "http://dbpedia.org/property/connectivity"@en ;
+              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Connectivity"@en .
 
 
 ###  https://w3id.org/i40/sto/Customization
@@ -14755,6 +14869,28 @@ XML Encryption for applying WS-Security to authenticate the user and protect dat
              rdfs:comment "A data breach occurs when an unauthorized individual or organization gains access to sensitive, protected, or confidential data."@en ;
              rdfs:label "Data Breach"@en ;
              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_breach"@en .
+
+
+###  https://w3id.org/i40/sto/Data_Collection
+:Data_Collection rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:IoT ;
+                 rdfs:comment "The data in IoT are always mass, distributed, and time-related and position related. At the same time, the data sources of the IoT are heterogeneous. There is a vast amount of real-time data collected by the IoT devices."@en ;
+                 rdfs:label "Data Collection"@en ;
+                 sto:hasDBpediaResource "http://dbpedia.org/page/Data_collection"@en ;
+                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_collection"@en .
+
+
+###  https://w3id.org/i40/sto/Data_Communication
+:Data_Communication rdf:type owl:NamedIndividual ,
+                             sto:Concern ;
+                    dcterms:creator sto:MuhammadUsman ;
+                    dul:isPartOf sto:IoT ;
+                    rdfs:comment "Due to a large amount of data transmitted, security issues such as DoS/DDoS attacks, forgery or man-in-the-middle attacks, and heterogeneous network attacks and others also affect the transport security in the IoT domain during communication"@en ;
+                    rdfs:label "Data Communication"@en ;
+                    sto:hasDBpediaResource "http://dbpedia.org/page/Category:Data_transmission"@en ;
+                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_transmission"@en .
 
 
 ###  https://w3id.org/i40/sto/Data_Location
@@ -14787,6 +14923,28 @@ as a consequence of information lock-in likewise causes organizations not do ado
            sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_loss"@en .
 
 
+###  https://w3id.org/i40/sto/Data_Management
+:Data_Management rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:EdgeComputing ,
+                              sto:IoT ;
+                 rdfs:comment "Data Management comprises all disciplines related to managing data as a valuable resource."@en ;
+                 rdfs:label "Data Management"@en ;
+                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_management"@en .
+
+
+###  https://w3id.org/i40/sto/Data_Security
+:Data_Security rdf:type owl:NamedIndividual ,
+                        sto:Concern ;
+               dcterms:creator sto:MuhammadUsman ;
+               dul:isPartOf sto:IoT ,
+                            sto:Security ;
+               rdfs:comment "Data security means protecting digital data, such as those in a database, from destructive forces and from the unwanted actions of unauthorized users, such as a cyberattack or a data breach."@en ;
+               rdfs:label "Data Security"@en ;
+               sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_security"@en .
+
+
 ###  https://w3id.org/i40/sto/Data_Segregation
 :Data_Segregation rdf:type owl:NamedIndividual ,
                            sto:Concern ;
@@ -14805,6 +14963,27 @@ as a consequence of information lock-in likewise causes organizations not do ado
                  rdfs:label "Data Separation"@en .
 
 
+###  https://w3id.org/i40/sto/Data_Storage
+:Data_Storage rdf:type owl:NamedIndividual ,
+                       sto:Concern ;
+              dcterms:creator sto:MuhammadUsman ;
+              dul:isPartOf sto:IoT ;
+              rdfs:comment "The IoT data are collected from various data sources in different structures and formats. IoT enables the collected data to be stored both in physical devices and cloud storage."@en ;
+              rdfs:label "Data Storage"@en ;
+              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_storage"@en .
+
+
+###  https://w3id.org/i40/sto/Data_secrecy_and_encryption
+:Data_secrecy_and_encryption rdf:type owl:NamedIndividual ,
+                                      sto:Concern ;
+                             dcterms:creator sto:MuhammadUsman ;
+                             dul:isPartOf sto:IoT ;
+                             rdfs:comment """The sensor devices perform autonomous detecting or estimations and exchange information to the data handling unit over the transmission framework. It is
+vital that the sensor devices ought to have legal encryption instrument to ensure the information uprightness at the data preparing unit."""@en ;
+                             rdfs:label "Data secrecy and encryption"@en ;
+                             sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Encryption"@en .
+
+
 ###  https://w3id.org/i40/sto/Denial_Of_Service
 :Denial_Of_Service rdf:type owl:NamedIndividual ,
                             sto:Concern ;
@@ -14813,6 +14992,26 @@ as a consequence of information lock-in likewise causes organizations not do ado
                    rdfs:comment "Denial of Service ( DoS ) referred to in the information technology , the unavailability of an Internet service , which was supposed to be available."@en ;
                    rdfs:label "Denial Of Service"@en ;
                    sto:hasWikipediaArticle "https://de.wikipedia.org/wiki/Denial_of_Service"@en .
+
+
+###  https://w3id.org/i40/sto/Device_Authentication
+:Device_Authentication rdf:type owl:NamedIndividual ,
+                                sto:Concern ;
+                       dcterms:creator sto:MuhammadUsman ;
+                       dul:isPartOf sto:Authentication ,
+                                    sto:IoT ;
+                       rdfs:label "Device Authentication"@en ;
+                       sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Authentication"@en .
+
+
+###  https://w3id.org/i40/sto/Efficiency
+:Efficiency rdf:type owl:NamedIndividual ,
+                     sto:Concern ;
+            dcterms:creator sto:MuhammadUsman ;
+            dul:isPartOf sto:IoT ;
+            rdfs:comment "Efficiency is the (often measurable) ability to avoid wasting materials, energy, efforts, money, and time in doing something or in producing a desired result."@en ;
+            rdfs:label "Efficiency"@en ;
+            sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Efficiency"@en .
 
 
 ###  https://w3id.org/i40/sto/Employee_Misuse
@@ -14835,6 +15034,17 @@ some access rights over the sensitive data stored on the cloud."""@en ;
                                sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/User_interface"@en .
 
 
+###  https://w3id.org/i40/sto/Greening_of_IoT
+:Greening_of_IoT rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:IoT ;
+                 rdfs:comment """The system energy consumption is expanding at a high rate because of increment in information rates, an increment in quantity of Internet-empowered services
+and fast development of Internet associated edgedevices. The future IoT will cause a critical increase in the network energy consumption."""@en ;
+                 rdfs:label "Greening of IoT"@en ;
+                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Green_computing"@en .
+
+
 ###  https://w3id.org/i40/sto/Human_Error
 :Human_Error rdf:type owl:NamedIndividual ,
                       sto:Concern ;
@@ -14854,6 +15064,18 @@ some access rights over the sensitive data stored on the cloud."""@en ;
                 rdfs:label "Implementation"@en ;
                 sto:hasDBpediaResource "http://dbpedia.org/page/Implementation"@en ;
                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Implementation"@en .
+
+
+###  https://w3id.org/i40/sto/Information_Privacy
+:Information_Privacy rdf:type owl:NamedIndividual ,
+                              sto:Concern ;
+                     dcterms:creator sto:MuhammadUsman ;
+                     dul:isPartOf sto:IoT ,
+                                  sto:Privacy ;
+                     rdfs:comment """The IoT utilizes different sort of object distinguishing proof advancements, e.g., RFID, 2D-standardized tags and so forth. Since each kind of day by day use articles
+will convey these recognizable proof labels and insert the particular object data, it is important to take legal protection measures and prevent unauthorized access."""@en ;
+                     rdfs:label "Information Privacy"@en ;
+                     sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Information_privacy"@en .
 
 
 ###  https://w3id.org/i40/sto/Insecure_APIs
@@ -14894,6 +15116,17 @@ service checking, all happen on the cloud. Validation and get to control is insp
                        rdfs:comment "Cloud provider should be prepared to and technically capable of providing end-to-end help for inquest of breaches, problems or illegal access."@en ;
                        rdfs:label "Investigative Support"@en ;
                        sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Investigation"@en .
+
+
+###  https://w3id.org/i40/sto/IoT_Globalization
+:IoT_Globalization rdf:type owl:NamedIndividual ,
+                            sto:Concern ;
+                   dcterms:creator sto:MuhammadUsman ;
+                   dul:isPartOf sto:IoT ;
+                   rdfs:comment """IoT cannot be localized, especially in medical applications where the service can be offered overseas. It is a challenge for nations to deal with this new concept, because may be almost every whisper in a country is collected and sent to the country
+that is providing the service."""@en ;
+                   rdfs:label "IoT Globalization"@en ;
+                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Globalization"@en .
 
 
 ###  https://w3id.org/i40/sto/Job_Satisfaction
@@ -14937,6 +15170,25 @@ easily penetrate into the system and retrieve all the stored sensitive informati
                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Malware"@en .
 
 
+###  https://w3id.org/i40/sto/Managing_Identities
+:Managing_Identities rdf:type owl:NamedIndividual ,
+                              sto:Concern ;
+                     dcterms:creator sto:MuhammadUsman ;
+                     dul:isPartOf sto:IoT ;
+                     rdfs:comment "The objects in the internet need a unique identification when they act as a part of the internet. The communication nodes in the internet are uniquely identified and mapped into a new network."@en ;
+                     rdfs:label "Managing Identities"@en ;
+                     sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Identity_management"@en .
+
+
+###  https://w3id.org/i40/sto/Massive_Numbers_of_Vulnerable_IoT_Devices
+:Massive_Numbers_of_Vulnerable_IoT_Devices rdf:type owl:NamedIndividual ,
+                                                    sto:Concern ;
+                                           dcterms:creator sto:MuhammadUsman ;
+                                           dul:isPartOf sto:EdgeComputing ,
+                                                        sto:IoT ;
+                                           rdfs:label "Massive Numbers of Vulnerable IoT Devices"@en .
+
+
 ###  https://w3id.org/i40/sto/Migration
 :Migration rdf:type owl:NamedIndividual ,
                     sto:Concern ;
@@ -14948,11 +15200,23 @@ application related to personal use are easily movable application to cloud plat
            sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Migration"@en .
 
 
+###  https://w3id.org/i40/sto/Miniaturization
+:Miniaturization rdf:type owl:NamedIndividual ,
+                          sto:Concern ;
+                 dcterms:creator sto:MuhammadUsman ;
+                 dul:isPartOf sto:IoT ;
+                 rdfs:comment """Nowadays, PC’s are diminishing in size, and new IoT devices will be in the Nano size and transparent. Thus, it will be difficult to maintain any sort of audit, quality control or traffic control, due to the Nano size and huge number of
+devices."""@en ;
+                 rdfs:label "Miniaturization"@en ;
+                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Miniaturization"@en .
+
+
 ###  https://w3id.org/i40/sto/Multitenancy_and_Shared_Technology_Issues
 :Multitenancy_and_Shared_Technology_Issues rdf:type owl:NamedIndividual ,
                                                     sto:Concern ;
                                            dcterms:creator sto:MuhammadUsman ;
-                                           dul:isPartOf sto:CloudComputing ;
+                                           dul:isPartOf sto:CloudComputing ,
+                                                        sto:IoT ;
                                            rdfs:comment "Clouds deliver scalable services that provide computing power for multiple tenants, whether those tenants are business groups from the same company or independent organizations"@en ;
                                            rdfs:label "Multitenancy and Shared Technology Issues"@en ;
                                            sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Multitenancy"@en .
@@ -14962,7 +15226,9 @@ application related to personal use are easily movable application to cloud plat
 :Network_Security rdf:type owl:NamedIndividual ,
                            sto:Concern ;
                   dcterms:creator sto:MuhammadUsman ;
-                  dul:isPartOf sto:CloudComputing ;
+                  dul:isPartOf sto:CloudComputing ,
+                               sto:IoT ,
+                               sto:Security ;
                   rdfs:comment """Data flow is an integral part of any cloud service over the network of computers or
 clusters of systems using internet. Any intruder can analyze the data packet to detect any weakness in the system and can gain access to applications and data
 using some kind of remote access mechanism and injection like SQL and some bad command, Denial of Service (DoS), Distributed DoS (DDoS), man in the
@@ -14971,14 +15237,57 @@ middle attacks, social networking attacks and some unauthorized attacks are the 
                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Network_security"@en .
 
 
+###  https://w3id.org/i40/sto/Network_Services
+:Network_Services rdf:type owl:NamedIndividual ,
+                           sto:Concern ;
+                  dcterms:creator sto:MuhammadUsman ;
+                  dul:isPartOf sto:IoT ;
+                  rdfs:comment "IoT device network services is another way to attack these systems. Inability to use the legitimate requests is the main root of Distributed Denial of Service attack (DDoS)."@en ;
+                  rdfs:label "Network Services"@en ;
+                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Network_service"@en .
+
+
+###  https://w3id.org/i40/sto/Objects_Safety_and_security
+:Objects_Safety_and_security rdf:type owl:NamedIndividual ,
+                                      sto:Concern ;
+                             dcterms:creator sto:MuhammadUsman ;
+                             dul:isPartOf sto:IoT ;
+                             rdfs:comment """The IoT comprises of a huge number of perception objects that spread over a few geographic zone; it is important to keep the intruder's access to the items that
+may make physical harm them or may change their operation"""@en ;
+                             rdfs:label "Objects Safety and Security"@en .
+
+
 ###  https://w3id.org/i40/sto/Performance
 :Performance rdf:type owl:NamedIndividual ,
                       sto:Concern ;
              dcterms:creator sto:MuhammadUsman ;
-             dul:isPartOf sto:CloudComputing ;
+             dul:isPartOf sto:CloudComputing ,
+                          sto:IoT ;
              rdfs:comment "Performance is completion of a task with application of knowledge, skills and abilities"@en ;
              rdfs:label "Performance"@en ;
              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Performance"@en .
+
+
+###  https://w3id.org/i40/sto/Policies
+:Policies rdf:type owl:NamedIndividual ,
+                   sto:Concern ;
+          dcterms:creator sto:MuhammadUsman ;
+          dul:isPartOf sto:IoT ;
+          rdfs:label "Policies"@en ;
+          sto:hasDBpediaResource "http://dbpedia.org/page/Policy"@en ;
+          sto:hasWikipediaArticle "A policy is a deliberate system of principles to guide decisions and achieve rational outcomes. A policy is a statement of intent, and is implemented as a procedure or protocol."@en ,
+                                  "https://en.wikipedia.org/wiki/Policy"@en .
+
+
+###  https://w3id.org/i40/sto/Protocols
+:Protocols rdf:type owl:NamedIndividual ,
+                    sto:Concern ;
+           dcterms:creator sto:MuhammadUsman ;
+           dul:isPartOf sto:IoT ;
+           rdfs:comment "IoT semantically implies an “overall system of interconnected items or objects remarkably known based on the standard protocols.” This implies a colossal no. of items perhaps heterogeneous objects is associated with the procedure. In IoT, unique Identification of items or objects and their representation and also the exchange of information which is the most challenging issue."@en ;
+           rdfs:label "Protocols"@en ;
+           sto:hasDBpediaResource "http://dbpedia.org/page/Communications_protocol"@en ;
+           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Protocol"@en .
 
 
 ###  https://w3id.org/i40/sto/Regulatory_Compliance
@@ -15011,6 +15320,17 @@ services."""@en ;
                          sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Fate-sharing"@en .
 
 
+###  https://w3id.org/i40/sto/Resource_Control_and_Management
+:Resource_Control_and_Management rdf:type owl:NamedIndividual ,
+                                          sto:Concern ;
+                                 dcterms:creator sto:MuhammadUsman ;
+                                 dul:isPartOf sto:IoT ,
+                                              <https://w3id.org/i40/sto/Internet_of_Things_(IOT)> ;
+                                 rdfs:comment "In organizational studies, resource management is the efficient and effective development of an organization's resources when they are needed"@en ;
+                                 rdfs:label "Resource Control and Management"@en ;
+                                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Resource_management"@en .
+
+
 ###  https://w3id.org/i40/sto/Risk_Management
 :Risk_Management rdf:type owl:NamedIndividual ,
                           sto:Concern ;
@@ -15027,10 +15347,31 @@ cloud computing"""@en ;
 :Secure_Data_Transmission rdf:type owl:NamedIndividual ,
                                    sto:Concern ;
                           dcterms:creator sto:MuhammadUsman ;
-                          dul:isPartOf sto:CloudComputing ;
+                          dul:isPartOf sto:CloudComputing ,
+                                       sto:IoT ;
                           rdfs:comment "In computer science, secure transmission refers to the transfer of data such as confidential or proprietary information over a secure channel."@en ;
                           rdfs:label "Secure Data Transmission"@en ;
                           sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Secure_transmission"@en .
+
+
+###  https://w3id.org/i40/sto/Secure_Middleware
+:Secure_Middleware rdf:type owl:NamedIndividual ,
+                            sto:Concern ;
+                   dcterms:creator sto:MuhammadUsman ;
+                   dul:isPartOf sto:IoT ;
+                   rdfs:comment "Middleware is computer software that provides services to software applications beyond those available from the operating system"@en ;
+                   rdfs:label "Secure Middleware"@en ;
+                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Middleware"@en .
+
+
+###  https://w3id.org/i40/sto/Secure_network_access
+:Secure_network_access rdf:type owl:NamedIndividual ,
+                                sto:Concern ;
+                       dcterms:creator sto:MuhammadUsman ;
+                       dul:isPartOf sto:IoT ;
+                       rdfs:comment "Network Access Control (NAC) is an approach to computer security that attempts to unify endpoint security technology (such as antivirus, host intrusion prevention, and vulnerability assessment), user or system authentication and network security enforcement"@en ;
+                       rdfs:label "Secure network access"@en ;
+                       sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Network_Access_Control"@en .
 
 
 ###  https://w3id.org/i40/sto/Selection_of_Service_Provider
@@ -15054,6 +15395,28 @@ share of the market, as well as their other resources"""@en ;
                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Service_recovery"@en .
 
 
+###  https://w3id.org/i40/sto/Software_Development_Challenges
+:Software_Development_Challenges rdf:type owl:NamedIndividual ,
+                                          sto:Concern ;
+                                 dcterms:creator sto:MuhammadUsman ;
+                                 dul:isPartOf sto:IoT ;
+                                 rdfs:comment """The ”5V” (volume, velocity, value, variety, and veracity) are important challenges in IoT networks. Every two years, data is doubling in size and it is expected to
+reach 44 Zettabytes in the next four years. The ”5V” of data is difficult to be analyzed, processed, stored through traditional technologies. Thus, researchers trend to implement  more intelligent algorithms can deal with a vast amount of
+data that can lead to minimize the problems."""@en ;
+                                 rdfs:label "Software Development Challenges"@en ;
+                                 sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Software_development"@en .
+
+
+###  https://w3id.org/i40/sto/Software_Updates
+:Software_Updates rdf:type owl:NamedIndividual ,
+                           sto:Concern ;
+                  dcterms:creator sto:MuhammadUsman ;
+                  dul:isPartOf sto:IoT ;
+                  rdfs:comment "Software update is the process that contributes to compromise an IoT based  system..Organizations are yet to be geared up with mechanisms to Remotely Patch Connected Devices."@en ;
+                  rdfs:label "Software Updates"@en ;
+                  sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Wikipedia:Software_updates"@en .
+
+
 ###  https://w3id.org/i40/sto/Standard_Service_Level_Agreement
 :Standard_Service_Level_Agreement rdf:type owl:NamedIndividual ,
                                            sto:Concern ;
@@ -15063,6 +15426,16 @@ share of the market, as well as their other resources"""@en ;
 implementation time, the inbound and outbound bandwidth, the central processing unit (CPU) centres, and the type of processor"""@en ;
                                   rdfs:label "Standard Service Level Agreement"@en ;
                                   sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Service-level_agreement"@en .
+
+
+###  https://w3id.org/i40/sto/Storage_Area
+:Storage_Area rdf:type owl:NamedIndividual ,
+                       sto:Concern ;
+              dcterms:creator sto:MuhammadUsman ;
+              dul:isPartOf sto:IoT ;
+              rdfs:comment "Area for storing data also matters in abeyance of delicate data like multimedia like video and should be stored close to the location where user can access easily. In this way, the possible time in accessing that data is reduced."@en ;
+              rdfs:label "Storage Area"@en ;
+              sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Data_storage"@en .
 
 
 ###  https://w3id.org/i40/sto/Strategy
@@ -15107,6 +15480,28 @@ Study realized that Cloud investment rose by 19% in larger scale enterprises con
 annually."""@en ;
                rdfs:label "Vendor Lockin"@en ;
                sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Vendor_lock-in"@en .
+
+
+###  https://w3id.org/i40/sto/Web_Interface
+:Web_Interface rdf:type owl:NamedIndividual ,
+                        sto:Concern ;
+               dcterms:creator sto:MuhammadUsman ;
+               dul:isPartOf sto:IoT ;
+               rdfs:comment """Most of the IoT devices might have web interfaces that has to be connected to information servers. One among the most important security threats for such systems is SQL injection and cross website scripting that may impact the web
+interfaces"""@en ;
+               rdfs:label "Web Interface"@en ;
+               sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/User_interface"@en .
+
+
+###  https://w3id.org/i40/sto/Internet_of_Things_(IOT)
+<https://w3id.org/i40/sto/Internet_of_Things_(IOT)> rdf:type owl:NamedIndividual ,
+                                                             sto:Concern ;
+                                                    dcterms:creator sto:MuhammadUsman ;
+                                                    dul:isPartOf sto:CloudComputing ;
+                                                    rdfs:comment "The Internet of things (IoT) is the network of devices such as vehicles, and home appliances that contain electronics, software, sensors, actuators, and connectivity which allows these things to connect, interact and exchange data."@en ;
+                                                    rdfs:label "Internet of Things (IOT)"@en ;
+                                                    sto:hasDBpediaResource "http://dbpedia.org/page/Internet_of_things"@en ;
+                                                    sto:hasWikipediaArticle "https://en.wikipedia.org/wiki/Internet_of_things"@en .
 
 
 ###  https://w3id.org/ids/core/TrustedConnector
